@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/screens/events_screen.dart';
+import 'package:gpca_networking/routes/route.dart';
+import 'package:gpca_networking/screens/events_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,15 +9,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp( 
+      debugShowCheckedModeBanner: false,
       title: 'GPCA Networking',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: EventsScreen(),
+      initialRoute: EventsListScreen.routeName,
+      routes: getRoutes(),
     );
   }
 }
