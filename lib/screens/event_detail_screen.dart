@@ -6,6 +6,7 @@ class EventDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('This is event_detail_screen');
     return Container();
   }
 }

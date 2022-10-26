@@ -1,46 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/constants/api_constants.dart';
 import 'package:gpca_networking/models/event_model.dart';
+import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/services/api_service.dart';
 import 'package:gpca_networking/widgets/events/event.dart';
+import 'package:provider/provider.dart';
 
-class EventsListScreen extends StatefulWidget {
-  static const routeName = '/';
-
-  @override
-  State<EventsListScreen> createState() => _EventsListScreenState();
-}
-
-class _EventsListScreenState extends State<EventsListScreen> {
-  late List<EventModel>? _eventsList = [];
-
-  void initState() {
-    super.initState();
-    _getData();
-  }
-
-  void _getData() async {
-    _eventsList = await ApiServce().getEvents();
-    Future.delayed(const Duration(seconds: 1)).then((value) => setState(() {}));
-  }
+class EventsListScreen extends StatelessWidget {
+  const EventsListScreen({Key? key}) : super(key: key);
+  static const routeName = '/events-list-screen';
 
   @override
   Widget build(BuildContext context) {
+    print('This is event_list_screen');
     return Scaffold(
       appBar: AppBar(
         title: Text('GPCA Networking'),
       ),
-      body: ListView.builder(
-        itemCount: _eventsList!.length,
-        itemBuilder: (ctx, index) {
-          return Event(
-            eventId: _eventsList![index].eventId,
-            eventName: _eventsList![index].eventName,
-            eventDate: _eventsList![index].eventDate,
-            eventVenue: _eventsList![index].eventVenue,
-            eventLogo: _eventsList![index].eventLogo,
-          );
-        },
+      body: FutureBuilder(
+        future: Provider.of<EventProvider>(context, listen: false).getEvents(),
+        builder: (ctx, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Consumer<EventProvider>(
+                    child: const Center(
+                      child: Text('Got no events yet, start adding some!'),
+                    ),
+                    builder: (ctx, result, ch) => result.events.isEmpty
+                        ? ch!
+                        : ListView.builder(
+                            itemCount: result.events.length,
+                            itemBuilder: (ctx, index) {
+                              return Event(
+                                eventId: result.events[index].eventId,
+                                eventName: result.events[index].eventName,
+                                eventDate: result.events[index].eventDate,
+                                eventVenue: result.events[index].eventVenue,
+                                eventLogo: result.events[index].eventLogo,
+                              );
+                            },
+                          ),
+                  ),
       ),
     );
   }

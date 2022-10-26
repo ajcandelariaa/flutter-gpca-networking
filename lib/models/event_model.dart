@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 List<EventModel> eventModelFromJson(String str) =>
     List<EventModel>.from(json.decode(str).map((x) => EventModel.fromJson(x)));

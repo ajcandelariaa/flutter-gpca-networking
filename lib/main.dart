@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/providers/event_provider.dart';
+import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
 import 'package:gpca_networking/screens/events_list_screen.dart';
+import 'package:gpca_networking/themes/main_theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,14 +15,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
-      debugShowCheckedModeBanner: false,
-      title: 'GPCA Networking',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: EventsListScreen.routeName,
-      routes: getRoutes(),
+    print('This is main_dart');
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => EventProvider()),
+      ],  
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'GPCA Networking',
+          theme: Provider.of<ThemeProvider>(context).lightData,
+          darkTheme: Provider.of<ThemeProvider>(context).darkData,
+          themeMode: Provider.of<ThemeProvider>(context).themeMode,
+          initialRoute: EventsListScreen.routeName,
+          routes: getRoutes(),
+        );
+      },
     );
   }
 }
