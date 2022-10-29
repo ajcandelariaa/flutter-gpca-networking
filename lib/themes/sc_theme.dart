@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MainTheme {
+class ScTheme {
   static final light = ThemeData(
     primaryColor: Colors.brown,
     brightness: Brightness.light,

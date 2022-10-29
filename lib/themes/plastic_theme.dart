@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MainTheme {
+class PlasticTheme {
   static final light = ThemeData(
     primaryColor: Colors.blue,
     brightness: Brightness.light,

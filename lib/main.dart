@@ -25,9 +25,12 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'GPCA Networking',
-          theme: Provider.of<ThemeProvider>(context).lightData,
-          darkTheme: Provider.of<ThemeProvider>(context).darkData,
-          themeMode: Provider.of<ThemeProvider>(context).themeMode,
+          // theme: Provider.of<ThemeProvider>(context).lightData,
+          // darkTheme: Provider.of<ThemeProvider>(context).darkData,
+          // themeMode: Provider.of<ThemeProvider>(context).themeMode,
+          theme: MainTheme.light,
+          darkTheme: MainTheme.dark,
+          themeMode: ThemeMode.dark,
           initialRoute: EventsListScreen.routeName,
           routes: getRoutes(),
         );

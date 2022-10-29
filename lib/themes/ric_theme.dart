@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MainTheme {
+class RicTheme {
   static final light = ThemeData(
     primaryColor: Colors.purple,
     brightness: Brightness.light,
