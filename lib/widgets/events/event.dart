@@ -25,16 +25,38 @@ class Event extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => _redirectToLogin(context),
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: InkWell(
+        onTap: () => _redirectToLogin(context),
         child: Card(
           elevation: 1,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(10),
           ),
-          child: Text(eventName),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Image.asset('assets/images/event_logo.png'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    textDirection: TextDirection.ltr,
+                    children: [
+                      Text(eventName),
+                      Text(eventDate),
+                      Text(eventVenue),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

@@ -64,26 +64,20 @@ class EventsListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('GPCA Networking'),
       ),
-      // body: ListView.builder(itemBuilder: (ctx, index) {
-      //   return Event(
-      //     eventId: result.events[index].eventId,
-      //     eventName: result.events[index].eventName,
-      //     eventDate: result.events[index].eventDate,
-      //     eventVenue: result.events[index].eventVenue,
-      //     eventLogo: result.events[index].eventLogo,
-      //   );
-      // }),
-      body: ListView.builder(
-        itemCount: _events.length,
-        itemBuilder: (ctx, index) {
-          return Event(
-            eventId: _events[index].eventId,
-            eventName: _events[index].eventName,
-            eventDate: _events[index].eventDate,
-            eventVenue: _events[index].eventVenue,
-            eventLogo: _events[index].eventLogo,
-          );
-        },
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+        child: ListView.builder(
+          itemCount: _events.length,
+          itemBuilder: (ctx, index) {
+            return Event(
+              eventId: _events[index].eventId,
+              eventName: _events[index].eventName,
+              eventDate: _events[index].eventDate,
+              eventVenue: _events[index].eventVenue,
+              eventLogo: _events[index].eventLogo,
+            );
+          },
+        ),
       ),
     );
   }

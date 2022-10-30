@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           // themeMode: Provider.of<ThemeProvider>(context).themeMode,
           theme: MainTheme.light,
           darkTheme: MainTheme.dark,
-          themeMode: ThemeMode.dark,
+          themeMode: ThemeMode.light,
           initialRoute: EventsListScreen.routeName,
           routes: getRoutes(),
         );
