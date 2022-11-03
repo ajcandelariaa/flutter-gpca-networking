@@ -26,7 +26,7 @@ class Event extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10),
       child: InkWell(
         onTap: () => _redirectToLogin(context),
         child: Card(
@@ -40,7 +40,7 @@ class Event extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.asset('assets/images/event_logo.png'),
+                  child: Image.asset(eventLogo, width: 150,),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),

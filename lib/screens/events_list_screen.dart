@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/event_model.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
+import 'package:gpca_networking/widgets/drawers/app/app_drawer.dart';
 import 'package:gpca_networking/widgets/events/event.dart';
 import 'package:provider/provider.dart';
 
@@ -18,42 +19,42 @@ class EventsListScreen extends StatelessWidget {
       eventName: 'Supply Chain Conference',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
-      eventLogo: 'url1',
+      eventLogo: 'assets/images/sc.png',
     ),
     EventModel(
       eventId: '2',
       eventName: 'Plastics Conference',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
-      eventLogo: 'url1',
+      eventLogo: 'assets/images/sc.png',
     ),
     EventModel(
       eventId: '3',
       eventName: 'Agri-Nutrients Conference',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
-      eventLogo: 'url1',
+      eventLogo: 'assets/images/sc.png',
     ),
     EventModel(
       eventId: '4',
       eventName: 'Research & Innovation Conference',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
-      eventLogo: 'url1',
+      eventLogo: 'assets/images/sc.png',
     ),
     EventModel(
       eventId: '5',
       eventName: 'Responsible Care',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
-      eventLogo: 'url1',
+      eventLogo: 'assets/images/sc.png',
     ),
     EventModel(
       eventId: '6',
       eventName: 'GPCA Annual Forum',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
-      eventLogo: 'url1',
+      eventLogo: 'assets/images/sc.png',
     ),
   ];
 
@@ -62,10 +63,11 @@ class EventsListScreen extends StatelessWidget {
     print('This is event_list_screen');
     return Scaffold(
       appBar: AppBar(
-        title: Text('GPCA Networking'),
+        title: const Text('GPCA Networking'),
       ),
+      drawer: AppDrawer(),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
         child: ListView.builder(
           itemCount: _events.length,
           itemBuilder: (ctx, index) {
