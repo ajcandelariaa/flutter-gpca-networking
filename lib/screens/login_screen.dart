@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/widgets/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
@@ -8,8 +9,47 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('This is login_screen');
     return Scaffold(
-      appBar: AppBar(title: Text('Login'),),
-      body: Center(child: Text('Login'),),
+      appBar: AppBar(
+        title: const Text('Login'),
+        centerTitle: true,
+      ),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const LoginForm(),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'To access this app, please use the login credentials sent to your registered email addess.',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'If you have not yet registered, please email at forumregistration@gpca.org.ae',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Learn more by visiting www.gpca.org.ae.',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

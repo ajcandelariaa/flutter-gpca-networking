@@ -3,7 +3,6 @@ import 'package:gpca_networking/providers/app_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
-import 'package:gpca_networking/screens/events_list_screen.dart';
 import 'package:gpca_networking/themes/main_theme.dart';
 import 'package:provider/provider.dart';
 

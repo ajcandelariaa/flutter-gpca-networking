@@ -32,15 +32,16 @@ class Event extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Padding(
+        child: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: Row(
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Image.asset(
-                  eventLogo,
-                  width: 150,
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Image.asset(
+                    eventLogo,
+                  ),
                 ),
               ),
               Container(
@@ -51,48 +52,51 @@ class Event extends StatelessWidget {
                   color: Color.fromARGB(255, 179, 179, 179),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Expanded(
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     textDirection: TextDirection.ltr,
                     children: [
                       Text(
                         eventName.toUpperCase(),
-                        overflow: TextOverflow.fade,
-                        softWrap: true,
                       ),
-                      SizedBox(height: 5,),                                           
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.date_range_outlined,
                             size: 14,
                             color: Color.fromARGB(255, 129, 129, 129),
                           ),
-                          SizedBox(width: 3),
+                          const SizedBox(width: 3),
                           Text(
                             eventDate,
-                            style: TextStyle(
+                            style: const TextStyle(
+                              fontSize: 12,
                               color: Color.fromARGB(255, 129, 129, 129),
                             ),
                           ),
                         ],
                       ),
+                      const SizedBox(height: 3,),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.place_outlined,
                             size: 14,
                             color: Color.fromARGB(255, 129, 129, 129),
                           ),
-                          SizedBox(width: 3),
+                          const SizedBox(width: 3),
                           Text(
                             eventVenue,
-                            style: TextStyle(
+                            style: const TextStyle(
+                              fontSize: 12,
                               color: Color.fromARGB(255, 129, 129, 129),
                             ),
                           ),
