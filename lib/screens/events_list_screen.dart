@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 class EventsListScreen extends StatelessWidget {
   EventsListScreen({Key? key}) : super(key: key);
-  static const routeName = '/events-list-screen';
+  static const routeName = '/';
 
   // Future<void> _refreshProducts(BuildContext context) async {
   //   await Provider.of<EventProvider>(context, listen: false).getEvents();
@@ -30,14 +30,14 @@ class EventsListScreen extends StatelessWidget {
     ),
     EventModel(
       eventId: '3',
-      eventName: 'Agri-Nutrients Conference',
+      eventName: 'Agri-Nutrients Conference awd awd awd ',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
       eventLogo: 'assets/images/sc.png',
     ),
     EventModel(
       eventId: '4',
-      eventName: 'Research & Innovation Conference',
+      eventName: 'Research & ',
       eventDate: "17-19 May, 2022",
       eventVenue: 'Place 1',
       eventLogo: 'assets/images/sc.png',
@@ -67,7 +67,7 @@ class EventsListScreen extends StatelessWidget {
       ),
       drawer: AppDrawer(),
       body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: ListView.builder(
           itemCount: _events.length,
           itemBuilder: (ctx, index) {

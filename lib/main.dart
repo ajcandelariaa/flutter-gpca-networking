@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/providers/app_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
         ChangeNotifierProvider(create: (_) => EventProvider()),
+        ChangeNotifierProvider(create: (_) => AppDrawerProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           theme: MainTheme.light,
           darkTheme: MainTheme.dark,
           themeMode: ThemeMode.light,
-          initialRoute: EventsListScreen.routeName,
+          initialRoute: '/',
           routes: getRoutes(),
         );
       },

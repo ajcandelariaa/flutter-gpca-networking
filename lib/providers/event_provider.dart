@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:gpca_networking/constants/api_constants.dart';
 import 'package:gpca_networking/models/event_model.dart';
 import 'package:http/http.dart' as http;
