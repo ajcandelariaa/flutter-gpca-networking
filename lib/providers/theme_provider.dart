@@ -8,16 +8,16 @@ import 'package:gpca_networking/themes/ric_theme.dart';
 import 'package:gpca_networking/themes/sc_theme.dart';
 
 class ThemeProvider with ChangeNotifier {
-  ThemeMode _themeMode = ThemeMode.light;
+  static bool _isDarkTheme = false;
   ThemeData _lightData = MainTheme.light;
   ThemeData _darkData = MainTheme.dark;
 
-  get themeMode => _themeMode;
+  get themeMode => _isDarkTheme ? ThemeMode.dark : ThemeMode.light;
   get lightData => _lightData;
   get darkData => _darkData;
 
-  toggleThemeMode(bool isDark){
-    _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+  toggleThemeMode(){
+    _isDarkTheme = !_isDarkTheme;
     notifyListeners();
   }
 

@@ -61,6 +61,9 @@ class Event extends StatelessWidget {
                     children: [
                       Text(
                         eventName.toUpperCase(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                       const SizedBox(
                         height: 5,
@@ -83,7 +86,9 @@ class Event extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 3,),
+                      const SizedBox(
+                        height: 3,
+                      ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
