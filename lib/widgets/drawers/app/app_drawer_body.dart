@@ -5,31 +5,18 @@ import 'package:gpca_networking/screens/events_list_screen.dart';
 import 'package:gpca_networking/screens/rate_this_app_screen.dart';
 import 'package:gpca_networking/screens/settings_screen.dart';
 import 'package:gpca_networking/screens/terms_condition_screen.dart';
+import 'package:gpca_networking/widgets/drawers/app/app_drawer_body_tile.dart';
 import 'package:provider/provider.dart';
 
 class AppDrawerBody extends StatelessWidget {
   const AppDrawerBody({Key? key}) : super(key: key);
 
-  Widget buildListTile(
-      String title, IconData icon, Function tapHandler, bool isActive) {
-    return ListTile(
-      selected: isActive,
-      selectedTileColor: Colors.grey[300],
-      leading: Icon(icon, color: Colors.blue[900]),
-      title: Text(
-        title,
-        style: TextStyle(color: Colors.blue[900], fontSize: 18),
-      ),
-      horizontalTitleGap: 0,
-      onTap: () => tapHandler(),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildListTile(
+        AppDrawerBodyTile(
           'Home',
           Icons.home,
           () {
@@ -41,7 +28,7 @@ class AppDrawerBody extends StatelessWidget {
           },
           context.read<AppDrawerProvider>().activePage == 1,
         ),
-        buildListTile(
+        AppDrawerBodyTile(
           'About GPCA Networking',
           Icons.home,
           () {
@@ -52,7 +39,7 @@ class AppDrawerBody extends StatelessWidget {
           },
           context.read<AppDrawerProvider>().activePage == 2,
         ),
-        buildListTile(
+        AppDrawerBodyTile(
           'Rate this app',
           Icons.home,
           () {
@@ -63,7 +50,7 @@ class AppDrawerBody extends StatelessWidget {
           },
           context.read<AppDrawerProvider>().activePage == 3,
         ),
-        buildListTile(
+        AppDrawerBodyTile(
           'Terms & Condition',
           Icons.home,
           () {
@@ -74,7 +61,7 @@ class AppDrawerBody extends StatelessWidget {
           },
           context.read<AppDrawerProvider>().activePage == 4,
         ),
-        buildListTile(
+        AppDrawerBodyTile(
           'Settings',
           Icons.home,
           () {
