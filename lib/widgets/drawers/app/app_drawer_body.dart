@@ -30,7 +30,7 @@ class AppDrawerBody extends StatelessWidget {
         ),
         AppDrawerBodyTile(
           'About GPCA Networking',
-          Icons.home,
+          Icons.info,
           () {
             context.read<AppDrawerProvider>().activePage == 2
                 ? null
@@ -41,7 +41,7 @@ class AppDrawerBody extends StatelessWidget {
         ),
         AppDrawerBodyTile(
           'Rate this app',
-          Icons.home,
+          Icons.rate_review_sharp,
           () {
             context.read<AppDrawerProvider>().activePage == 3
                 ? null
@@ -52,7 +52,7 @@ class AppDrawerBody extends StatelessWidget {
         ),
         AppDrawerBodyTile(
           'Terms & Condition',
-          Icons.home,
+          Icons.rule,
           () {
             context.read<AppDrawerProvider>().activePage == 4
                 ? null
@@ -63,7 +63,7 @@ class AppDrawerBody extends StatelessWidget {
         ),
         AppDrawerBodyTile(
           'Settings',
-          Icons.home,
+          Icons.settings,
           () {
             context.read<AppDrawerProvider>().activePage == 5
                 ? null

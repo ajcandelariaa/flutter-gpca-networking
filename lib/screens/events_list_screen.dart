@@ -66,8 +66,6 @@ class EventsListScreen extends StatelessWidget {
       return await showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              // icon: Icon(Icons.warning),
-              // icon: Image.asset('assets/images/gpca-networking-logo.png'),
               title: const Text('Exit App'),
               content: const Text('Are you sure you want to exit the app?'),
               actions: [
