@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/screens/event/about_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
+import 'package:gpca_networking/widgets/event_detail_icons.dart';
 import 'package:provider/provider.dart';
 
 class EventDetailScreen extends StatelessWidget {
@@ -35,7 +37,12 @@ class EventDetailScreen extends StatelessWidget {
       onWillPop: showExitPopup,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Event Logo'),
+          title: Center(
+            child: Image.asset(
+              'assets/images/sc_inverted.png',
+              width: 200,
+            ),
+          ),
           centerTitle: true,
           actions: [
             Container(
@@ -45,266 +52,179 @@ class EventDetailScreen extends StatelessWidget {
           ],
         ),
         drawer: EventDrawer(),
-        body: Container(
+        body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 width: double.infinity,
                 child: Image.asset(
-                  'assets/images/drawer-header.png',
+                  'assets/images/sc_banner.jpg',
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
                 child: Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'About',
+                            icon: Icons.info_outline,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Covid-19 safety guidelines',
+                            icon: Icons.coronavirus_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
-                        )
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Program',
+                            icon: Icons.view_agenda,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Speakers',
+                            icon: Icons.mic,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Sponsors',
+                            icon: Icons.people_alt,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
-                        )
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Exhibitors',
+                            icon: Icons.house_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
                       ],
                     ),
-                  SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: "Meeting room \n partners",
+                            icon: Icons.handshake,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Media partners',
+                            icon: Icons.people_alt_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
-                        )
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Attendees',
+                            icon: Icons.chat,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
                       ],
                     ),
-
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: "My Meetings",
+                            icon: Icons.calendar_month_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Venue',
+                            icon: Icons.map_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
                         ),
-
-                        Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Icon(
-                                Icons.mic,
-                                size: 40,
-                                color: Colors.white,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                            SizedBox(height: 5,),
-                            Text('Speakers'),
-                          ],
-                        )
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Social feeds',
+                            icon: Icons.featured_play_list_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
+                      ],
+                    ),SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: "Press releases",
+                            icon: Icons.newspaper,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Publications',
+                            icon: Icons.library_books_outlined,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
+                        Expanded(
+                          child: EventDetailIcon(
+                            iconTitle: 'Notifications',
+                            icon: Icons.notifications,
+                            tapHandler: () => Navigator.of(context)
+                                .pushNamed(AboutScreen.routeName),
+                          ),
+                        ),
                       ],
                     ),
                   ],

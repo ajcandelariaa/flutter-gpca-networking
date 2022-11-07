@@ -19,7 +19,7 @@ class Event extends StatelessWidget {
   });
 
   void _redirectToLogin(ctx) {
-    // Provider.of<ThemeProvider>(ctx, listen: false).toggleThemeMode(true);
+    Provider.of<ThemeProvider>(ctx, listen: false).toggleThemeData('sc');
     Navigator.of(ctx).pushNamed(LoginScreen.routeName, arguments: eventId);
   }
 

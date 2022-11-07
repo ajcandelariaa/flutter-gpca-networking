@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
+import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
 import 'package:gpca_networking/screens/event/favorites_screen.dart';
 import 'package:gpca_networking/screens/event/profile_screen.dart';
@@ -100,6 +101,7 @@ class EventDrawerBody extends StatelessWidget {
             if(await showExitPopupEvents()){
               Navigator.of(context).pushReplacementNamed(EventsListScreen.routeName);
               context.read<EventDrawerProvider>().setActivePage(1);
+              context.read<ThemeProvider>().toggleThemeData('main');
             } 
           },
           context.read<EventDrawerProvider>().activePage == 4,
@@ -111,6 +113,7 @@ class EventDrawerBody extends StatelessWidget {
             if(await showExitPopupLogout()){
               Navigator.of(context).pushReplacementNamed(EventsListScreen.routeName);
               context.read<EventDrawerProvider>().setActivePage(1);
+              context.read<ThemeProvider>().toggleThemeData('main');
             } 
           },
           context.read<EventDrawerProvider>().activePage == 5,

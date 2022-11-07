@@ -19,7 +19,7 @@ class EventDrawerHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar( 
-              backgroundImage: AssetImage('assets/images/gpca-networking-logo-inverted.png'),
+              backgroundImage: AssetImage('assets/images/sample_user.jpeg'),
               radius: 40,
             ),
             SizedBox(width: 10,),
@@ -31,7 +31,7 @@ class EventDrawerHeader extends StatelessWidget {
                   Text(
                     'Albert Joseph Candelaria',
                     style: TextStyle(
-                        color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 5,
