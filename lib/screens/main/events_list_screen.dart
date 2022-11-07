@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/event_model.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/widgets/drawers/app/app_drawer.dart';
-import 'package:gpca_networking/widgets/event.dart';
+import 'package:gpca_networking/widgets/event/event.dart';
 import 'package:provider/provider.dart';
 
 class EventsListScreen extends StatelessWidget {

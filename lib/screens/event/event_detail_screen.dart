@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/screens/event/about_screen.dart';
+import 'package:gpca_networking/screens/event/about/about_screen.dart';
+import 'package:gpca_networking/screens/event/attendees/attendees_screen.dart';
+import 'package:gpca_networking/screens/event/covid/covid_guidelines_screen.dart';
+import 'package:gpca_networking/screens/event/exhibitor/exhibitors_screen.dart';
+import 'package:gpca_networking/screens/event/floor_plan/floor_plan_screen.dart';
+import 'package:gpca_networking/screens/event/media_partner/media_partners_screen.dart';
+import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partners_screen.dart';
+import 'package:gpca_networking/screens/event/my-meetings/my_meetings_screen.dart';
+import 'package:gpca_networking/screens/event/notification/notifications_screen.dart';
+import 'package:gpca_networking/screens/event/press_releases/press_releases_screen.dart';
+import 'package:gpca_networking/screens/event/program/program_screen.dart';
+import 'package:gpca_networking/screens/event/publications/publications_screen.dart';
+import 'package:gpca_networking/screens/event/social_feeds/social_feeds_screen.dart';
+import 'package:gpca_networking/screens/event/speaker/speakers_screen.dart';
+import 'package:gpca_networking/screens/event/sponsor/sponsors_screen.dart';
+import 'package:gpca_networking/screens/event/venue/venue_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
-import 'package:gpca_networking/widgets/event_detail_icons.dart';
-import 'package:provider/provider.dart';
+import 'package:gpca_networking/widgets/event/event_detail_icons.dart';
+import 'package:badges/badges.dart';
 
 class EventDetailScreen extends StatelessWidget {
   static const routeName = '/event-detail';
@@ -45,9 +60,23 @@ class EventDetailScreen extends StatelessWidget {
           ),
           centerTitle: true,
           actions: [
-            Container(
-              margin: EdgeInsets.only(right: 13),
-              child: Icon(Icons.notifications),
+            InkWell(
+              onTap: () => Navigator.of(context).pushNamed(NotificationsScreen.routeName),
+              child: Container(
+                margin: EdgeInsets.only(right: 13),
+                child: Badge(
+                  padding: EdgeInsets.all(4),
+                  position: BadgePosition.topEnd(top: 9, end: -2),
+                  badgeContent: Text(
+                    "5",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 10
+                    ),
+                  ),
+                  child: Icon(Icons.notifications),
+                ),
+              ),
             ),
           ],
         ),
@@ -83,7 +112,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Covid-19 safety guidelines',
                             icon: Icons.coronavirus_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(CovidGuidelinesScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -91,7 +120,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Program',
                             icon: Icons.view_agenda,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(ProgramScreen.routeName),
                           ),
                         ),
                       ],
@@ -108,7 +137,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Speakers',
                             icon: Icons.mic,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(SpeakersScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -116,7 +145,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Sponsors',
                             icon: Icons.people_alt,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(SponsorsScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -124,7 +153,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Exhibitors',
                             icon: Icons.house_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(ExhibitorsScreen.routeName),
                           ),
                         ),
                       ],
@@ -141,7 +170,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: "Meeting room \n partners",
                             icon: Icons.handshake,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(MeetingRoomPartnersScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -149,7 +178,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Media partners',
                             icon: Icons.people_alt_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(MediaPartnersScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -157,7 +186,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Attendees',
                             icon: Icons.chat,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(AttendeesScreen.routeName),
                           ),
                         ),
                       ],
@@ -174,7 +203,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: "My Meetings",
                             icon: Icons.calendar_month_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(MyMeetingsScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -182,7 +211,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Venue',
                             icon: Icons.map_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(VenueScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -190,11 +219,12 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Social feeds',
                             icon: Icons.featured_play_list_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(SocialFeedsScreen.routeName),
                           ),
                         ),
                       ],
-                    ),SizedBox(
+                    ),
+                    SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -206,7 +236,7 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: "Press releases",
                             icon: Icons.newspaper,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(PressReleasesScreen.routeName),
                           ),
                         ),
                         Expanded(
@@ -214,15 +244,15 @@ class EventDetailScreen extends StatelessWidget {
                             iconTitle: 'Publications',
                             icon: Icons.library_books_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(PublicationsScreen.routeName),
                           ),
                         ),
                         Expanded(
                           child: EventDetailIcon(
-                            iconTitle: 'Notifications',
-                            icon: Icons.notifications,
+                            iconTitle: 'Floor plan',
+                            icon: Icons.developer_board,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(AboutScreen.routeName),
+                                .pushNamed(FloorPlanScreen.routeName),
                           ),
                         ),
                       ],

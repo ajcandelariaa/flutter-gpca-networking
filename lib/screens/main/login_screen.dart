@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
             centerTitle: true,
           ),
           body: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -51,8 +51,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                     child: const LoginForm(),
                   ),
+                  SizedBox(height: 20,),
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 5,),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
@@ -60,17 +61,17 @@ class LoginScreen extends StatelessWidget {
                           'Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.',
                           style: TextStyle(fontSize: 14),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Text(
                           'To access this app, please use the login credentials sent to your registered email addess.',
                           style: TextStyle(fontSize: 14),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Text(
                           'If you have not yet registered, please email at forumregistration@gpca.org.ae',
                           style: TextStyle(fontSize: 14),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Text(
                           'Learn more by visiting www.gpca.org.ae.',
                           style: TextStyle(fontSize: 14),

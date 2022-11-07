@@ -20,7 +20,7 @@ class EventDrawerHeader extends StatelessWidget {
           children: [
             CircleAvatar( 
               backgroundImage: AssetImage('assets/images/sample_user.jpeg'),
-              radius: 40,
+              radius: 50,
             ),
             SizedBox(width: 10,),
             Expanded(

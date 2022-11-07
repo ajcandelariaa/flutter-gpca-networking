@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
-import 'package:gpca_networking/screens/event/favorites_screen.dart';
-import 'package:gpca_networking/screens/event/profile_screen.dart';
-import 'package:gpca_networking/screens/events_list_screen.dart';
+import 'package:gpca_networking/screens/event/favorite/favorites_screen.dart';
+import 'package:gpca_networking/screens/event/profile/profile_screen.dart';
+import 'package:gpca_networking/screens/main/events_list_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer_body_tile.dart';
 import 'package:provider/provider.dart';
 

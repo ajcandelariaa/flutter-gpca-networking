@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/app_drawer_provider.dart';
-import 'package:gpca_networking/screens/events_list_screen.dart';
+import 'package:gpca_networking/screens/main/events_list_screen.dart';
 import 'package:gpca_networking/widgets/drawers/app/app_drawer.dart';
 import 'package:provider/provider.dart';
 

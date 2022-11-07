@@ -31,9 +31,6 @@ class MyApp extends StatelessWidget {
           theme: Provider.of<ThemeProvider>(context).lightData,
           darkTheme: Provider.of<ThemeProvider>(context).darkData,
           themeMode: Provider.of<ThemeProvider>(context).themeMode,
-          // theme: MainTheme.light,
-          // darkTheme: MainTheme.dark,
-          // themeMode: ThemeMode.light,
           initialRoute: '/',
           routes: getRoutes(),
         );

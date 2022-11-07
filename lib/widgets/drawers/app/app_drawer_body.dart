@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/app_drawer_provider.dart';
-import 'package:gpca_networking/screens/about_gpca_networking_screen.dart';
-import 'package:gpca_networking/screens/events_list_screen.dart';
-import 'package:gpca_networking/screens/rate_this_app_screen.dart';
-import 'package:gpca_networking/screens/settings_screen.dart';
-import 'package:gpca_networking/screens/terms_condition_screen.dart';
+import 'package:gpca_networking/screens/main/about_gpca_networking_screen.dart';
+import 'package:gpca_networking/screens/main/events_list_screen.dart';
+import 'package:gpca_networking/screens/main/rate_this_app_screen.dart';
+import 'package:gpca_networking/screens/main/settings_screen.dart';
+import 'package:gpca_networking/screens/main/terms_condition_screen.dart';
 import 'package:gpca_networking/widgets/drawers/app/app_drawer_body_tile.dart';
 import 'package:provider/provider.dart';
 

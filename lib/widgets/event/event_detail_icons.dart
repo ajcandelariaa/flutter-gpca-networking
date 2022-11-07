@@ -18,7 +18,7 @@ class EventDetailIcon extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               color: Theme.of(context).primaryColor,
