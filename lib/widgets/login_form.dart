@@ -18,6 +18,21 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void _goToEventDetailScreen(ctx) {
+    final snackBar = SnackBar(
+      duration: const Duration(seconds: 10),
+      action: SnackBarAction(
+        label: "Dismiss",
+        onPressed: () {},
+      ),
+      content: const Text(
+        'Logged in succesfully!',
+      ),
+    );
+
+    ScaffoldMessenger.of(ctx)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(snackBar);
+      
     Navigator.of(context)
         .pushNamedAndRemoveUntil(EventDetailScreen.routeName, (route) => false);
   }
