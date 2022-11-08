@@ -216,10 +216,10 @@ class EventDetailScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: EventDetailIcon(
-                            iconTitle: 'Social feeds',
-                            icon: Icons.featured_play_list_outlined,
+                            iconTitle: 'Floor plan',
+                            icon: Icons.developer_board,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(SocialFeedsScreen.routeName),
+                                .pushNamed(FloorPlanScreen.routeName),
                           ),
                         ),
                       ],
@@ -249,10 +249,10 @@ class EventDetailScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: EventDetailIcon(
-                            iconTitle: 'Floor plan',
-                            icon: Icons.developer_board,
+                            iconTitle: 'Social feeds',
+                            icon: Icons.featured_play_list_outlined,
                             tapHandler: () => Navigator.of(context)
-                                .pushNamed(FloorPlanScreen.routeName),
+                                .pushNamed(SocialFeedsScreen.routeName),
                           ),
                         ),
                       ],

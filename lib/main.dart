@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/app_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
+import 'package:gpca_networking/providers/social_feeds_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => EventProvider()),
         ChangeNotifierProvider(create: (_) => AppDrawerProvider()),
         ChangeNotifierProvider(create: (_) => EventDrawerProvider()),
+        ChangeNotifierProvider(create: (_) => SocialFeedsProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(
