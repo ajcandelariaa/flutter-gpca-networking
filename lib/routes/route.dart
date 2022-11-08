@@ -18,6 +18,7 @@ import 'package:gpca_networking/screens/event/speaker/speakers_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_screen.dart';
 import 'package:gpca_networking/screens/event/venue/venue_screen.dart';
 import 'package:gpca_networking/screens/main/events_list_screen.dart';
+import 'package:gpca_networking/screens/main/forgot_password_screen.dart';
 import 'package:gpca_networking/screens/main/login_screen.dart';
 import 'package:gpca_networking/screens/main/rate_this_app_screen.dart';
 import 'package:gpca_networking/screens/main/settings_screen.dart';
@@ -28,6 +29,7 @@ getRoutes() {
   return {
     EventsListScreen.routeName: (context) => EventsListScreen(),
     LoginScreen.routeName: (context) => LoginScreen(),
+    ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
     AboutGpcaNetworkingScreen.routeName: (context) => AboutGpcaNetworkingScreen(),
     RateThisAppScreen.routeName: (context) => RateThisAppScreen(),
     TermsConditionScreen.routeName: (context) => TermsConditionScreen(),

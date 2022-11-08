@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/widgets/login_form.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatelessWidget {
-  static const routeName = '/login';
   const LoginScreen({Key? key}) : super(key: key);
+  static const routeName = '/login';
+  static const htmlData = """
+      <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
+      <p>To access this app, please use the login credentials sent to your registered email addess.</p>
+      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
+    """;
 
   _onBackButtonPress(ctx) {
     Provider.of<ThemeProvider>(ctx, listen: false).toggleThemeData('main');
@@ -16,7 +24,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('This is login_screen');
     return WillPopScope(
-      onWillPop: () => _onBackButtonPress(context),
+      onWillPop: () => _onBackButtonPress(context) ?? false,
       child: GestureDetector(
         onTap: () {
           FocusScopeNode currentFocus = FocusScope.of(context);
@@ -28,6 +36,10 @@ class LoginScreen extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Login'),
             centerTitle: true,
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () => _onBackButtonPress(context),
+            ),
           ),
           body: Container(
             margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -40,7 +52,8 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
-                          color: Theme.of(context).primaryColor.withOpacity(0.5),
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.5),
                         ),
                         const BoxShadow(
                           color: Colors.white,
@@ -51,32 +64,24 @@ class LoginScreen extends StatelessWidget {
                     ),
                     child: const LoginForm(),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5,),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'To access this app, please use the login credentials sent to your registered email addess.',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'If you have not yet registered, please email at forumregistration@gpca.org.ae',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'Learn more by visiting www.gpca.org.ae.',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 5,
+                    ),
+                    child: Html(
+                      data: htmlData,
+                      onLinkTap: (url, context, attributes, element) async {
+                        final urlF = Uri.parse(url.toString());
+                        if (await canLaunchUrl(urlF)) {
+                          await launchUrl(urlF,
+                              mode: LaunchMode.externalApplication);
+                        } else {
+                          throw 'Could not launch $urlF';
+                        }
+                      },
                     ),
                   ),
                 ],

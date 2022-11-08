@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
+import 'package:gpca_networking/screens/main/forgot_password_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _LoginFormState extends State<LoginForm> {
     ScaffoldMessenger.of(ctx)
       ..removeCurrentSnackBar()
       ..showSnackBar(snackBar);
-      
+
     Navigator.of(context)
         .pushNamedAndRemoveUntil(EventDetailScreen.routeName, (route) => false);
   }
@@ -119,9 +120,12 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(
             height: 10,
           ),
-          const Text(
-            'Forgot your password?',
-            style: TextStyle(color: Colors.grey, fontSize: 12),
+          InkWell(
+            onTap: () => Navigator.of(context).pushNamed(ForgotPasswordScreen.routeName),
+            child: const Text(
+              'Forgot your password?',
+              style: TextStyle(color: Colors.grey, fontSize: 12, ),
+            ),
           ),
           const SizedBox(
             height: 20,

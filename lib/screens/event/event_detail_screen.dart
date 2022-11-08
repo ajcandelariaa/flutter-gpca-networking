@@ -92,7 +92,7 @@ class EventDetailScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
                 child: Column(
                   children: [
                     Row(
@@ -125,7 +125,7 @@ class EventDetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -158,7 +158,7 @@ class EventDetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -191,7 +191,7 @@ class EventDetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -224,7 +224,7 @@ class EventDetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(

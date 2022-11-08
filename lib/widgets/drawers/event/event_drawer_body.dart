@@ -13,13 +13,13 @@ class EventDrawerBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Future<bool> showExitPopupEvents() async {
       return await showDialog(
             context: context,
             builder: (context) => AlertDialog(
               title: const Text('Events List'),
-              content: const Text('Are you sure you want to go back to the events list?'),
+              content: const Text(
+                  'Are you sure you want to go back to the events list?'),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(false),
@@ -55,7 +55,7 @@ class EventDrawerBody extends StatelessWidget {
           ) ??
           false;
     }
-    
+
     return Column(
       children: [
         EventDrawerBodyTile(
@@ -98,11 +98,12 @@ class EventDrawerBody extends StatelessWidget {
           'Events List',
           Icons.list_alt,
           () async {
-            if(await showExitPopupEvents()){
-              Navigator.of(context).pushReplacementNamed(EventsListScreen.routeName);
+            if (await showExitPopupEvents()) {
+              Navigator.of(context)
+                  .pushReplacementNamed(EventsListScreen.routeName);
               context.read<EventDrawerProvider>().setActivePage(1);
               context.read<ThemeProvider>().toggleThemeData('main');
-            } 
+            }
           },
           context.read<EventDrawerProvider>().activePage == 4,
         ),
@@ -110,11 +111,27 @@ class EventDrawerBody extends StatelessWidget {
           'Logout',
           Icons.logout,
           () async {
-            if(await showExitPopupLogout()){
-              Navigator.of(context).pushReplacementNamed(EventsListScreen.routeName);
+            if (await showExitPopupLogout()) {
+              final snackBar = SnackBar(
+                duration: const Duration(seconds: 10),
+                action: SnackBarAction(
+                  label: "Dismiss",
+                  onPressed: () {},
+                ),
+                content: const Text(
+                  'Logged out succesfully!',
+                ),
+              );
+
+              ScaffoldMessenger.of(context)
+                ..removeCurrentSnackBar()
+                ..showSnackBar(snackBar);
+                
+              Navigator.of(context)
+                  .pushReplacementNamed(EventsListScreen.routeName);
               context.read<EventDrawerProvider>().setActivePage(1);
               context.read<ThemeProvider>().toggleThemeData('main');
-            } 
+            }
           },
           context.read<EventDrawerProvider>().activePage == 5,
         ),
