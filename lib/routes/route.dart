@@ -1,3 +1,4 @@
+import 'package:gpca_networking/screens/event/program/program_detail_screen.dart';
 import 'package:gpca_networking/screens/main/about_gpca_networking_screen.dart';
 import 'package:gpca_networking/screens/event/about/about_screen.dart';
 import 'package:gpca_networking/screens/event/attendees/attendees_screen.dart';
@@ -43,6 +44,7 @@ getRoutes() {
     AboutScreen.routeName: (context) => AboutScreen(),
     CovidGuidelinesScreen.routeName: (context) => CovidGuidelinesScreen(),
     ProgramScreen.routeName: (context) => ProgramScreen(),
+    ProgramDetailScreen.routeName: (context) => ProgramDetailScreen(),
     SpeakersScreen.routeName: (context) => SpeakersScreen(),
     SponsorsScreen.routeName: (context) => SponsorsScreen(),
     ExhibitorsScreen.routeName: (context) => ExhibitorsScreen(),
