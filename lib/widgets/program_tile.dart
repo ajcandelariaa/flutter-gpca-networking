@@ -11,7 +11,7 @@ class ProgramTile extends StatelessWidget {
       child: Stack(
         children: [
           ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(20)),
+            borderRadius: const BorderRadius.all(Radius.circular(15)),
             child: Container(
               color: Colors.black,
               child: Opacity(
@@ -25,10 +25,10 @@ class ProgramTile extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 40,
-            left: 50,
-            right: 50,
+            bottom: 20,
+            left: 20,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
                   "Annual GPCA Forum",

@@ -30,21 +30,22 @@ class ProgramTimelineTile extends StatelessWidget {
       beforeLineStyle: LineStyle(color: Colors.grey.shade300, thickness: 1.5),
       axis: TimelineAxis.vertical,
       alignment: TimelineAlign.manual,
-      lineXY: 0.17,
+      lineXY: 0.18,
       isLast: sessionIsLast,
       isFirst: sessionIsFirst,
       startChild: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             sessionStartTime,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
           ),
           Text(sessionEndTime),
         ],
       ),
       endChild: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             clipBehavior: Clip.none,
@@ -74,11 +75,10 @@ class ProgramTimelineTile extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 240, 240, 240),
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
+                      topRight: Radius.circular(12),
+                      bottomRight: Radius.circular(12)),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                 child: Row(
                   children: [
                     Expanded(
@@ -88,28 +88,54 @@ class ProgramTimelineTile extends StatelessWidget {
                           Text(
                             sessionTitle,
                             style: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
+                                fontSize: 16, fontWeight: FontWeight.w500),
                           ),
-                          if (sessionDescription != "")
-                            const SizedBox(
-                              height: 5,
-                            ),
-                          if (sessionDescription != "")
-                            Text(
-                              sessionDescription,
-                              style: TextStyle(color: Colors.grey[800]),
-                            ),
+                          // if (sessionDescription != "")
+                          //   const SizedBox(
+                          //     height: 5,
+                          //   ),
+                          // if (sessionDescription != "")
+                          //   Text(
+                          //     sessionDescription,
+                          //     maxLines: 1,
+                          //     overflow: TextOverflow.ellipsis,
+                          //     style: TextStyle(color: Colors.grey[800]),
+                          //   ),
+                          SizedBox(height: 3,),
+                          Row(
+                            children: const [
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/sample_user.jpeg'),
+                                radius: 8,
+                              ),
+                              SizedBox(width: 2,),
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/sample_agenda_banner.PNG'),
+                                radius: 8,
+                              ),
+                              SizedBox(width: 2,),
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/sample_user.jpeg'),
+                                radius: 8,
+                              ),
+                              SizedBox(width: 2,),
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/sc_banner.jpg'),
+                                radius: 8,
+                              ),
+                              SizedBox(width: 2,),
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/sample_user.jpeg'),
+                                radius: 8,
+                              ),
+                            ],
+                          ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    InkWell(
-                      child: Icon(
-                        FontAwesomeIcons.arrowRight,
-                        color: Theme.of(context).primaryColor,
-                        size: 17,
                       ),
                     ),
                   ],
