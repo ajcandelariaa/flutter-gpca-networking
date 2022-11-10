@@ -9,7 +9,7 @@ class ProgramScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Program'),
+        title: const Text('Program'),
         centerTitle: true,
       ),
       body: Container(

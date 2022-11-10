@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/widgets/program_timeline_tile.dart';
+import 'package:gpca_networking/widgets/sessions_timeline_tile.dart';
 
-class ProgramDetailScreen extends StatelessWidget {
-  const ProgramDetailScreen({Key? key}) : super(key: key);
-  static const routeName = '/program-detail';
+class SessionsScreen extends StatelessWidget {
+  const SessionsScreen({Key? key}) : super(key: key);
+  static const routeName = '/sessions';
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,9 @@ class ProgramDetailScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: const Text('Program Detail'),
+          title: const Text('Sessions'),
           centerTitle: true,
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: [
               Tab(
                 text: 'TUE 06 DEC',
@@ -40,7 +40,7 @@ class ProgramDetailScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    ProgramTimelineTile(
+                    SessionsTimelineTile(
                       sessionStartTime: "08:30",
                       sessionEndTime: "09:30",
                       sessionTitle:
@@ -51,7 +51,7 @@ class ProgramDetailScreen extends StatelessWidget {
                       sessionIsLast: false,
                       sessionIndicatorXY: 0.5,
                     ),
-                    ProgramTimelineTile(
+                    SessionsTimelineTile(
                       sessionStartTime: "08:30",
                       sessionEndTime: "09:30",
                       sessionTitle: "Registration and networking",
@@ -60,7 +60,7 @@ class ProgramDetailScreen extends StatelessWidget {
                       sessionIsLast: false,
                       sessionIndicatorXY: 0.5,
                     ),
-                    ProgramTimelineTile(
+                    SessionsTimelineTile(
                       sessionStartTime: "08:30",
                       sessionEndTime: "09:30",
                       sessionTitle:
@@ -70,7 +70,7 @@ class ProgramDetailScreen extends StatelessWidget {
                       sessionIsLast: false,
                       sessionIndicatorXY: 0.5,
                     ),
-                    ProgramTimelineTile(
+                    SessionsTimelineTile(
                       sessionStartTime: "08:30",
                       sessionEndTime: "09:30",
                       sessionTitle: "Registration and networking",
@@ -79,7 +79,7 @@ class ProgramDetailScreen extends StatelessWidget {
                       sessionIsLast: false,
                       sessionIndicatorXY: 0.5,
                     ),
-                    ProgramTimelineTile(
+                    SessionsTimelineTile(
                       sessionStartTime: "08:30",
                       sessionEndTime: "09:30",
                       sessionTitle:

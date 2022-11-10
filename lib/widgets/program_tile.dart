@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/screens/event/program/program_detail_screen.dart';
+import 'package:gpca_networking/screens/event/program/session_screen.dart';
 
 class ProgramTile extends StatelessWidget {
   const ProgramTile({Key? key}) : super(key: key);
@@ -7,7 +7,7 @@ class ProgramTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed(ProgramDetailScreen.routeName),
+      onTap: () => Navigator.of(context).pushNamed(SessionsScreen.routeName),
       child: Stack(
         children: [
           ClipRRect(
