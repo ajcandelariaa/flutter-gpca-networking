@@ -39,9 +39,11 @@ class SessionsTimelineTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            sessionStartTime,
-            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+          FittedBox(
+            child: Text(
+              sessionStartTime,
+              style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+            ),
           ),
           Text(sessionEndTime),
         ],
