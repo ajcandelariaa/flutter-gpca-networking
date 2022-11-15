@@ -81,6 +81,9 @@ flutter:
     - assets/images/sample_user.jpeg
     - assets/images/sample_floor_plan.jpg
     - assets/images/sample_agenda_banner.PNG
+    - assets/images/sabic_logo.png
+    - assets/images/muntajat_logo.jpg
+    - assets/images/tasnee_logo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
