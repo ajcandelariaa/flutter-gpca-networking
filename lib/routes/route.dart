@@ -1,3 +1,4 @@
+import 'package:gpca_networking/screens/event/media_partner/media_partner_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_screen.dart';
 import 'package:gpca_networking/screens/main/about_gpca_networking_screen.dart';
@@ -52,6 +53,7 @@ getRoutes() {
     ExhibitorsScreen.routeName: (context) => ExhibitorsScreen(),
     MeetingRoomPartnersScreen.routeName: (context) => MeetingRoomPartnersScreen(),
     MediaPartnersScreen.routeName: (context) => MediaPartnersScreen(),
+    MediaPartnerDetailScreen.routeName: (context) => MediaPartnerDetailScreen(),
     AttendeesScreen.routeName: (context) => AttendeesScreen(),
     MyMeetingsScreen.routeName: (context) => MyMeetingsScreen(),
     VenueScreen.routeName: (context) => VenueScreen(),
