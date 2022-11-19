@@ -4,7 +4,7 @@ import 'package:gpca_networking/screens/main/forgot_password_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
-
+  
   @override
   State<LoginForm> createState() => _LoginFormState();
 }
@@ -20,7 +20,7 @@ class _LoginFormState extends State<LoginForm> {
 
   void _goToEventDetailScreen(ctx) {
     final snackBar = SnackBar(
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 3),
       action: SnackBarAction(
         label: "Dismiss",
         onPressed: () {},

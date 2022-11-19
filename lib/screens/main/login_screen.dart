@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/widgets/login_form.dart';
 import 'package:provider/provider.dart';
@@ -8,12 +9,6 @@ import 'package:url_launcher/url_launcher.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
   static const routeName = '/login';
-  static const htmlData = """
-      <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
-      <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
-      <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
-    """;
 
   _onBackButtonPress(ctx) {
     Provider.of<ThemeProvider>(ctx, listen: false).toggleThemeData('main');
@@ -23,6 +18,9 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('This is login_screen');
+    final eventId = ModalRoute.of(context)!.settings.arguments as String;
+    final eventData = Provider.of<EventProvider>(context, listen: false).findById(eventId);
+
     return WillPopScope(
       onWillPop: () => _onBackButtonPress(context) ?? false,
       child: GestureDetector(
@@ -72,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                       horizontal: 5,
                     ),
                     child: Html(
-                      data: htmlData,
+                      data: eventData.loginHTMLData,
                       onLinkTap: (url, context, attributes, element) async {
                         final urlF = Uri.parse(url.toString());
                         if (await canLaunchUrl(urlF)) {

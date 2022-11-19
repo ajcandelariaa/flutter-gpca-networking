@@ -1,15 +1,19 @@
 class EventModel {
-  final String eventId;
-  final String eventName;
-  final String eventDate;
-  final String eventVenue;
-  final String eventLogo;
+  final String id;
+  final String name;
+  final String date;
+  final String venue;
+  final String logo;
+  final String logoInverted;
+  final String loginHTMLData;
 
   EventModel({
-    required this.eventId,
-    required this.eventName,
-    required this.eventDate,
-    required this.eventVenue,
-    required this.eventLogo,
+    required this.id,
+    required this.name,
+    required this.date,
+    required this.venue,
+    required this.logo,
+    required this.logoInverted,
+    required this.loginHTMLData,
   });
 }

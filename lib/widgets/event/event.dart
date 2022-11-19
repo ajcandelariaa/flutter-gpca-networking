@@ -49,7 +49,7 @@ class Event extends StatelessWidget {
                 child: Container(
                   width: 0.5,
                   height: 70.0,
-                  color: Color.fromARGB(255, 179, 179, 179),
+                  color: const Color.fromARGB(255, 179, 179, 179),
                 ),
               ),
               Expanded(
@@ -61,7 +61,7 @@ class Event extends StatelessWidget {
                     children: [
                       Text(
                         eventName.toUpperCase(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w500,
                         ),
                       ),

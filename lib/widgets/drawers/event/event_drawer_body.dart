@@ -113,7 +113,7 @@ class EventDrawerBody extends StatelessWidget {
           () async {
             if (await showExitPopupLogout()) {
               final snackBar = SnackBar(
-                duration: const Duration(seconds: 10),
+                duration: const Duration(seconds: 3),
                 action: SnackBarAction(
                   label: "Dismiss",
                   onPressed: () {},
