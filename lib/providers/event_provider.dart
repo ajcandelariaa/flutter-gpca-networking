@@ -16,7 +16,7 @@ class EventProvider with ChangeNotifier {
       loginHTMLData: """ 
       <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
       <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>If you have not yet registered, please email at <a href="forumregistration@gpca.org.ae">forumregistration@gpca.org.ae</a>.</p>
       <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
       """,
     ),
@@ -30,7 +30,7 @@ class EventProvider with ChangeNotifier {
       loginHTMLData: """ 
       <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
       <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>If you have not yet registered, please email at <a href="forumregistration@gpca.org.ae">forumregistration@gpca.org.ae</a>.</p>
       <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
       """,
     ),
@@ -44,7 +44,7 @@ class EventProvider with ChangeNotifier {
       loginHTMLData: """ 
       <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
       <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>If you have not yet registered, please email at <a href="mailto:forumregistration@gpca.org.ae">forumregistration@gpca.org.ae</a>.</p>
       <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
       """,
     ),
@@ -58,7 +58,7 @@ class EventProvider with ChangeNotifier {
       loginHTMLData: """ 
       <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
       <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>If you have not yet registered, please email at <a href="forumregistration@gpca.org.ae">forumregistration@gpca.org.ae</a>.</p>
       <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
       """,
     ),
@@ -72,7 +72,7 @@ class EventProvider with ChangeNotifier {
       loginHTMLData: """ 
       <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
       <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>If you have not yet registered, please email at <a href="forumregistration@gpca.org.ae">forumregistration@gpca.org.ae</a>.</p>
       <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
       """,
     ),
@@ -86,7 +86,7 @@ class EventProvider with ChangeNotifier {
       loginHTMLData: """ 
       <p>Welcome to the GPCA Networking app. Get exclusive access to this app offered to all registered delegates of GPCA events.</p> 
       <p>To access this app, please use the login credentials sent to your registered email addess.</p>
-      <p>If you have not yet registered, please email at forumregistration@gpca.org.ae.</p>
+      <p>If you have not yet registered, please email at <a href="forumregistration@gpca.org.ae">forumregistration@gpca.org.ae</a>.</p>
       <p>Learn more by visiting <a href="https://www.gpca.org.ae/">www.gpca.org.ae</a>.</p>
       """,
     ),

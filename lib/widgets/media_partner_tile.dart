@@ -3,12 +3,14 @@ import 'package:gpca_networking/screens/event/media_partner/media_partner_detail
 
 class MediaPartnerTile extends StatelessWidget {
   final String id;
+  final String eventId;
   final String name;
   final String website;
   final String logo;
 
   MediaPartnerTile({
     required this.id,
+    required this.eventId,
     required this.name,
     required this.website,
     required this.logo,
@@ -17,7 +19,7 @@ class MediaPartnerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed(MediaPartnerDetailScreen.routeName),
+      onTap: () => Navigator.of(context).pushNamed(MediaPartnerDetailScreen.routeName, arguments: [id, eventId]),
       child: Container(
         padding: const EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 10),
         margin: const EdgeInsets.only(

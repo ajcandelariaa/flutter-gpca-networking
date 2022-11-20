@@ -19,7 +19,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('This is login_screen');
     final eventId = ModalRoute.of(context)!.settings.arguments as String;
-    final eventData = Provider.of<EventProvider>(context, listen: false).findById(eventId);
+    final eventData =
+        Provider.of<EventProvider>(context, listen: false).findById(eventId);
 
     return WillPopScope(
       onWillPop: () => _onBackButtonPress(context) ?? false,
@@ -72,12 +73,24 @@ class LoginScreen extends StatelessWidget {
                     child: Html(
                       data: eventData.loginHTMLData,
                       onLinkTap: (url, context, attributes, element) async {
-                        final urlF = Uri.parse(url.toString());
+                        var urlF = Uri.parse(url.toString());
                         if (await canLaunchUrl(urlF)) {
                           await launchUrl(urlF,
                               mode: LaunchMode.externalApplication);
                         } else {
-                          throw 'Could not launch $urlF';
+                          String urlEncoded = Uri.encodeComponent(url.toString());
+                          urlF = Uri.parse('mailto:$urlEncoded');
+                          if (await canLaunchUrl(urlF)) {
+                            await launchUrl(urlF);
+                          } else {
+                            String urlEncoded = Uri.encodeComponent(url.toString());
+                            urlF = Uri.parse('tel:$urlEncoded');
+                            if (await canLaunchUrl(urlF)) {
+                              await launchUrl(urlF);
+                            } else {
+                              throw 'Could not launch $urlF';
+                            }
+                          }
                         }
                       },
                     ),
