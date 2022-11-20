@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/app_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
+import 'package:gpca_networking/providers/exhibitor_provider.dart';
 import 'package:gpca_networking/providers/media_partner_provider.dart';
+import 'package:gpca_networking/providers/meeting_room_partner_provider.dart';
 import 'package:gpca_networking/providers/social_feeds_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => EventDrawerProvider()),
         ChangeNotifierProvider(create: (_) => SocialFeedsProvider()),
         ChangeNotifierProvider(create: (_) => MediaPartnerProvider()),
+        ChangeNotifierProvider(create: (_) => MeetingRoomPartnerProvider()),
+        ChangeNotifierProvider(create: (_) => ExhibitorProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(
