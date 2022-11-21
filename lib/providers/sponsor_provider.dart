@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/models/media_partner_model.dart';
+import 'package:gpca_networking/models/sponsor_model.dart';
 
-class MediaPartnerProvider with ChangeNotifier {
-  final List<MediaPartnerModel> _mediaPartners = [
-    MediaPartnerModel(
+class SponsorProvider with ChangeNotifier {
+  final List<SponsorModel> _sponsors = [
+    SponsorModel(
       id: '1',
       eventId: '1',
+      sponsorType: "tier",
+      sponsorCategory: "principal",
       contactNumber: "13123123",
       emailAddress: "ajajcandelaria@gmail.com",
       isFavorite: false,
@@ -16,9 +18,11 @@ class MediaPartnerProvider with ChangeNotifier {
       htmlDescription:
           """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed felis congue, interdum nunc quis, tempor elit. Sed id dictum orci. Mauris a est ac lacus posuere euismod ut non nisi. Aliquam erat volutpat. Aliquam ultricies ex quis finibus mollis. Nullam ut elit eu metus aliquam dapibus. Nullam accumsan viverra erat, eu molestie risus ultrices sit amet. Vivamus non pharetra leo, et cursus lorem. Nunc at ante nec turpis placerat ornare eget sit amet lacus. Nam sed lectus nec risus iaculis bibendum at sit amet dui. Morbi ornare quam ut urna laoreet suscipit. Aenean condimentum consectetur mollis. Pellentesque ut augue sem. Vivamus maximus augue imperdiet augue luctus, vitae rhoncus lacus varius. Mauris posuere elit ac condimentum imperdiet. Duis pharetra pretium rhoncus. In hac habitasse platea dictumst. Nunc tincidunt erat at nibh finibus, lacinia porta libero dictum. Praesent ut luctus velit. Aliquam erat volutpat. In velit metus, ultrices vitae luctus eget, suscipit id turpis.""",
     ),
-    MediaPartnerModel(
+    SponsorModel(
       id: '2',
       eventId: '2',
+      sponsorType: "tier",
+      sponsorCategory: "diamond",
       contactNumber: "3131311",
       emailAddress: "muntahat@test.com",
       isFavorite: false,
@@ -29,9 +33,11 @@ class MediaPartnerProvider with ChangeNotifier {
       htmlDescription:
           """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed felis congue, interdum nunc quis, tempor elit. Sed id dictum orci. Mauris a est ac lacus posuere euismod ut non nisi. Aliquam erat volutpat. Aliquam ultricies ex quis finibus mollis. Nullam ut elit eu metus aliquam dapibus. Nullam accumsan viverra erat, eu molestie risus ultrices sit amet. Vivamus non pharetra leo, et cursus lorem. Nunc at ante nec turpis placerat ornare eget sit amet lacus. Nam sed lectus nec risus iaculis bibendum at sit amet dui. Morbi ornare quam ut urna laoreet suscipit. Aenean condimentum consectetur mollis. Pellentesque ut augue sem. Vivamus maximus augue imperdiet augue luctus, vitae rhoncus lacus varius. Mauris posuere elit ac condimentum imperdiet. Duis pharetra pretium rhoncus. In hac habitasse platea dictumst. Nunc tincidunt erat at nibh finibus, lacinia porta libero dictum. Praesent ut luctus velit. Aliquam erat volutpat. In velit metus, ultrices vitae luctus eget, suscipit id turpis.""",
     ),
-    MediaPartnerModel(
+    SponsorModel(
       id: '3',
       eventId: '2',
+      sponsorType: "tier",
+      sponsorCategory: "diamond",
       contactNumber: "222222222",
       emailAddress: "tasnee@test.com",
       isFavorite: false,
@@ -44,26 +50,33 @@ class MediaPartnerProvider with ChangeNotifier {
     ),
   ];
 
-  List<MediaPartnerModel> get mediaPartners {
-    return [..._mediaPartners];
+  List<SponsorModel> get allSponsors {
+    return [..._sponsors];
   }
 
-  MediaPartnerModel findById(String mediaPartnerId, String eventId) {
-    return _mediaPartners.firstWhere(
-      (mediaPartner) =>
-          mediaPartner.id == mediaPartnerId && mediaPartner.eventId == eventId,
+  List<SponsorModel> get tierSponsors {
+    return _sponsors.where(
+      (sponsor) => sponsor.sponsorType == "tier",
+    ).toList();
+  }
+
+  List<SponsorModel> get associateSponsors {
+    return _sponsors.where(
+      (sponsor) => sponsor.sponsorType == "associate",
+    ).toList();
+  }
+
+  List<SponsorModel> get otherSponsors {
+    return _sponsors.where(
+      (sponsor) => sponsor.sponsorType == "other",
+    ).toList();
+  }
+
+  SponsorModel findById(String sponsorId, String eventId) {
+    return _sponsors.firstWhere(
+      (sponsor) =>
+          sponsor.id == sponsorId && sponsor.eventId == eventId,
     );
   }
 
-  void toggleFavorite(String mediaPartnerId, String eventId) {
-    var mediaPartner = _mediaPartners.firstWhere((mediaPartner) => mediaPartner.id == mediaPartnerId && mediaPartner.eventId == eventId,
-    );
-    mediaPartner.isFavorite = !mediaPartner.isFavorite;
-    if(mediaPartner.isFavorite){
-      mediaPartner.numberOfFavorites++;
-    } else {
-      mediaPartner.numberOfFavorites--;
-    }
-    notifyListeners();
-  }
 }

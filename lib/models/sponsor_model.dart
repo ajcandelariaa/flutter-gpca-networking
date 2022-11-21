@@ -1,19 +1,23 @@
-class MediaPartnerModel {
+class SponsorModel {
   final String id;
   final String eventId;
+  final String sponsorType;
+  final String sponsorCategory;
   final String name;
   final String website;
   final String emailAddress;
   final String contactNumber;
   final String htmlDescription;
-  late int numberOfFavorites;
+  final int numberOfFavorites;
   final String logo;
-  late bool isFavorite;
+  final bool isFavorite;
 
-  MediaPartnerModel({
+  SponsorModel({
     required this.id,
     required this.eventId,
     required this.name,
+    required this.sponsorType,
+    required this.sponsorCategory,
     required this.website,
     required this.emailAddress,
     required this.contactNumber,

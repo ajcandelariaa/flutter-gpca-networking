@@ -18,15 +18,20 @@ class ProgramScreen extends StatelessWidget {
           vertical: 15,
         ),
         child: SingleChildScrollView(
-            child: Column(
-          children: const [
-            ProgramTile(),
-            SizedBox(height: 15,),
-            ProgramTile(),
-            SizedBox(height: 15,),
-            ProgramTile(),
-          ],
-        )),
+          child: Column(
+            children: const [
+              ProgramTile(),
+              SizedBox(
+                height: 15,
+              ),
+              ProgramTile(),
+              SizedBox(
+                height: 15,
+              ),
+              ProgramTile(),
+            ],
+          ),
+        ),
       ),
     );
   }

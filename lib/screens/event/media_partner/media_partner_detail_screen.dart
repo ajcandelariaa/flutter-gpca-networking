@@ -84,16 +84,19 @@ class _MediaPartnerDetailScreenState extends State<MediaPartnerDetailScreen> {
                             ),
                           ],
                         ),
-                        Column(
-                          children: [
-                            mediaPartner.isFavorite
-                                ? const Icon(
-                                    Icons.favorite,
-                                    color: Colors.red,
-                                  )
-                                : const Icon(Icons.favorite_border),
-                            Text(mediaPartner.numberOfFavorites.toString()),
-                          ],
+                        InkWell(
+                          onTap: () => Provider.of<MediaPartnerProvider>(context, listen: false).toggleFavorite(mediaPartner.id, mediaPartner.eventId),
+                          child: Column(
+                            children: [
+                              mediaPartner.isFavorite
+                                  ? const Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                    )
+                                  : const Icon(Icons.favorite_border),
+                              Text(mediaPartner.numberOfFavorites.toString()),
+                            ],
+                          ),
                         )
                       ],
                     ),
