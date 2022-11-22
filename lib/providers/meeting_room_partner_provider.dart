@@ -19,7 +19,7 @@ class MeetingRoomPartnerProvider with ChangeNotifier {
     ),
     MeetingRoomPartnerModel(
       id: '2',
-      eventId: '2',
+      eventId: '1',
       contactNumber: "3131311",
       emailAddress: "muntahat@test.com",
       isFavorite: false,
@@ -33,7 +33,7 @@ class MeetingRoomPartnerProvider with ChangeNotifier {
     ),
     MeetingRoomPartnerModel(
       id: '3',
-      eventId: '2',
+      eventId: '1',
       contactNumber: "222222222",
       emailAddress: "tasnee@test.com",
       isFavorite: false,

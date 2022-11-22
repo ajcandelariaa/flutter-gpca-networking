@@ -20,7 +20,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '2',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "Tier",
       sponsorCategory: "Diamond",
       contactNumber: "3131311",
@@ -35,7 +35,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '3',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "Tier",
       sponsorCategory: "Diamond",
       contactNumber: "222222222",
@@ -50,7 +50,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '4',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "Tier",
       sponsorCategory: "Diamond",
       contactNumber: "222222222",
@@ -65,7 +65,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '5',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "Tier",
       sponsorCategory: "Platinum",
       contactNumber: "222222222",
@@ -80,7 +80,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '6',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "Tier",
       sponsorCategory: "Gold",
       contactNumber: "222222222",
@@ -95,7 +95,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '7',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "Associate",
       sponsorCategory: "Event guide and pocket programme",
       contactNumber: "222222222",
@@ -110,7 +110,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '8',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "GPCA Youth Forum",
       sponsorCategory: "Partner",
       contactNumber: "222222222",
@@ -125,7 +125,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '9',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "GPCA Symposium",
       sponsorCategory: "Principal",
       contactNumber: "222222222",
@@ -140,7 +140,7 @@ class SponsorProvider with ChangeNotifier {
     ),
     SponsorModel(
       id: '10',
-      eventId: '2',
+      eventId: '1',
       sponsorType: "GPCA Youth Forum",
       sponsorCategory: "Principal",
       contactNumber: "222222222",

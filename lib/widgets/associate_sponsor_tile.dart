@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/screens/event/sponsor/sponsors_detail_screen.dart';
 
 class AssociateSponsorTile extends StatelessWidget {
   final String id;
@@ -20,7 +21,7 @@ class AssociateSponsorTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () => Navigator.of(context).pushNamed(MeetingRoomPartnerDetailScreen.routeName, arguments: [id, eventId]),
+      onTap: () => Navigator.of(context).pushNamed(SponsorDetailScreen.routeName, arguments: [id, eventId]),
       child: Container(
         padding: const EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 10),
         margin: const EdgeInsets.only(
