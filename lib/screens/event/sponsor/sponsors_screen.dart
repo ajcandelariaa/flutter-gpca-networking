@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_all_screen.dart';
+import 'package:gpca_networking/screens/event/sponsor/sponsors_type_tier_screen.dart';
 import 'package:gpca_networking/widgets/sponsors_type_tile.dart';
 
 class SponsorsScreen extends StatelessWidget {
@@ -24,7 +25,7 @@ class SponsorsScreen extends StatelessWidget {
               SponsorsTypeTile(
                 sponsorType: "All Sponsors",
                 sponsorImage: 'assets/images/sample_agenda_banner.PNG',
-                tapHandler: () => Navigator.of(context).pushNamed(SponsorsTypeAllScreen.routeName),
+                routeName: SponsorsTypeAllScreen.routeName,
               ),
               const SizedBox(
                 height: 15,
@@ -32,7 +33,7 @@ class SponsorsScreen extends StatelessWidget {
               SponsorsTypeTile(
                 sponsorType: "Tier Sponsors",
                 sponsorImage: 'assets/images/sample_agenda_banner.PNG',
-                tapHandler: () => Navigator.of(context).pushNamed(SponsorsTypeAllScreen.routeName),
+                routeName: SponsorsTypeTierScreen.routeName,
               ),
               const SizedBox(
                 height: 15,
@@ -40,15 +41,15 @@ class SponsorsScreen extends StatelessWidget {
               SponsorsTypeTile(
                 sponsorType: "Associate Sponsors",
                 sponsorImage: 'assets/images/sample_agenda_banner.PNG',
-                tapHandler: () => Navigator.of(context).pushNamed(SponsorsTypeAllScreen.routeName),
+                routeName: SponsorsTypeAllScreen.routeName,
               ),
               const SizedBox(
                 height: 15,
               ),
               SponsorsTypeTile(
-                sponsorType: "Other Sponsors",
+                sponsorType: "Featured Sponsors",
                 sponsorImage: 'assets/images/sample_agenda_banner.PNG',
-                tapHandler: () => Navigator.of(context).pushNamed(SponsorsTypeAllScreen.routeName),
+                routeName: SponsorsTypeAllScreen.routeName,
               ),
             ],
           ),

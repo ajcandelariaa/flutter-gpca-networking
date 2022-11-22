@@ -4,18 +4,18 @@ import 'package:gpca_networking/screens/event/program/session_screen.dart';
 class SponsorsTypeTile extends StatelessWidget {
   final String sponsorType;
   final String sponsorImage;
-  Function tapHandler;
+  final String routeName;
 
   SponsorsTypeTile({
     required this.sponsorType,
     required this.sponsorImage,
-    required this.tapHandler,
+    required this.routeName,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => tapHandler,
+      onTap: () => Navigator.of(context).pushNamed(routeName),
       child: Stack(
         alignment: Alignment.center,
         children: [

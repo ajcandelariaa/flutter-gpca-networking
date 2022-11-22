@@ -6,6 +6,7 @@ import 'package:gpca_networking/providers/exhibitor_provider.dart';
 import 'package:gpca_networking/providers/media_partner_provider.dart';
 import 'package:gpca_networking/providers/meeting_room_partner_provider.dart';
 import 'package:gpca_networking/providers/social_feeds_provider.dart';
+import 'package:gpca_networking/providers/sponsor_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MediaPartnerProvider()),
         ChangeNotifierProvider(create: (_) => MeetingRoomPartnerProvider()),
         ChangeNotifierProvider(create: (_) => ExhibitorProvider()),
+        ChangeNotifierProvider(create: (_) => SponsorProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(
