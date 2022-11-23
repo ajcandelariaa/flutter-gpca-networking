@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/screens/event/sponsor/sponsors_detail_screen.dart';
+import 'package:gpca_networking/screens/event/sponsor/sponsor_detail_screen.dart';
 
 class AllSponsorTile extends StatelessWidget {
   final String id;
