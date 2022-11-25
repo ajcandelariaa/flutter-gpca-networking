@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/sponsor_provider.dart';
-import 'package:gpca_networking/widgets/associate_sponsor_tile.dart';
-import 'package:gpca_networking/widgets/search_bar.dart';
-import 'package:gpca_networking/widgets/all_sponsor_tile.dart';
+import 'package:gpca_networking/widgets/sponsors/associate_sponsor_tile.dart';
 import 'package:provider/provider.dart';
 
 class SponsorsTypeAssociateScreen extends StatelessWidget {

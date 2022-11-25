@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/sponsor_provider.dart';
-import 'package:gpca_networking/widgets/tier_sponsor_category_tile.dart';
+import 'package:gpca_networking/widgets/sponsors/featured_sponsor_category_tile.dart';
 import 'package:provider/provider.dart';
 
-class TierSponsorTile extends StatelessWidget {
-  final String category;
+class FeaturedSponsorTile extends StatelessWidget {
+  final String type;
 
-  TierSponsorTile({
-    required this.category,
+  FeaturedSponsorTile({
+    required this.type,
   });
 
   @override
   Widget build(BuildContext context) {
     final tierSponsorsCategorized =
-        Provider.of<SponsorProvider>(context).tierSponsorsCategorized(category);
+        Provider.of<SponsorProvider>(context).featuredSponsorsCategorizedbyType(type);
     return Column(
       children: [
         Container(
@@ -25,7 +25,7 @@ class TierSponsorTile extends StatelessWidget {
             color: Theme.of(context).primaryColor,
           ),
           child: Text(
-            category.toUpperCase(),
+            type.toUpperCase(),
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
@@ -37,11 +37,11 @@ class TierSponsorTile extends StatelessWidget {
           height: 3,
         ),
         for (var item in tierSponsorsCategorized)
-          TierSponsorCategoryTile(
+          FeaturedSponsorCategoryTile(
             id: item.id,
             eventId: item.eventId,
             name: item.name,
-            website: item.website,
+            category: item.sponsorCategory,
             logo: item.logo,
           ),
         SizedBox(

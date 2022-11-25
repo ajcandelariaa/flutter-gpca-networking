@@ -3,6 +3,7 @@ import 'package:gpca_networking/screens/event/media_partner/media_partner_detail
 import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partner_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_screen.dart';
+import 'package:gpca_networking/screens/event/speaker/speakers_category_all_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsor_detail_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_all_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_associate_screen.dart';
@@ -52,10 +53,13 @@ getRoutes() {
 
     AboutScreen.routeName: (context) => AboutScreen(),
     CovidGuidelinesScreen.routeName: (context) => CovidGuidelinesScreen(),
+
     ProgramScreen.routeName: (context) => ProgramScreen(),
     SessionsScreen.routeName: (context) => SessionsScreen(),
     SessionDetailScreen.routeName: (context) => SessionDetailScreen(),
+
     SpeakersScreen.routeName: (context) => SpeakersScreen(),
+    SpeakersCategoryAllScreen.routeName: (context) => SpeakersCategoryAllScreen(),
 
     SponsorsScreen.routeName: (context) => SponsorsScreen(),
     SponsorsTypeAllScreen.routeName: (context) => SponsorsTypeAllScreen(),
@@ -66,10 +70,13 @@ getRoutes() {
 
     ExhibitorsScreen.routeName: (context) => ExhibitorsScreen(),
     ExhibitorDetailScreen.routeName: (context) => ExhibitorDetailScreen(),
+
     MeetingRoomPartnersScreen.routeName: (context) => MeetingRoomPartnersScreen(),
     MeetingRoomPartnerDetailScreen.routeName: (context) => MeetingRoomPartnerDetailScreen(),
+
     MediaPartnersScreen.routeName: (context) => MediaPartnersScreen(),
     MediaPartnerDetailScreen.routeName: (context) => MediaPartnerDetailScreen(),
+
     AttendeesScreen.routeName: (context) => AttendeesScreen(),
     MyMeetingsScreen.routeName: (context) => MyMeetingsScreen(),
     VenueScreen.routeName: (context) => VenueScreen(),

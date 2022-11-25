@@ -3,7 +3,7 @@ import 'package:gpca_networking/screens/event/sponsor/sponsors_type_all_screen.d
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_associate_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_featured.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_tier_screen.dart';
-import 'package:gpca_networking/widgets/sponsors_type_tile.dart';
+import 'package:gpca_networking/widgets/sponsors/sponsors_type_tile.dart';
 
 class SponsorsScreen extends StatelessWidget {
   const SponsorsScreen({Key? key}) : super(key: key);

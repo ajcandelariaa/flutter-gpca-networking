@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/providers/sponsor_provider.dart';
+import 'package:gpca_networking/providers/speaker_provider.dart';
 import 'package:gpca_networking/widgets/search_bar.dart';
-import 'package:gpca_networking/widgets/sponsors/all_sponsor_tile.dart';
+import 'package:gpca_networking/widgets/speakers/speakers_category_all_tile.dart';
 import 'package:provider/provider.dart';
 
-class SponsorsTypeAllScreen extends StatelessWidget {
-  const SponsorsTypeAllScreen({Key? key}) : super(key: key);
-  static const routeName = "/sponsors-type-all";
+class SpeakersCategoryAllScreen extends StatelessWidget {
+  const SpeakersCategoryAllScreen({Key? key}) : super(key: key);
+  static const routeName = "/speakers-category-all";
 
   @override
   Widget build(BuildContext context) {
-    final sponsors = Provider.of<SponsorProvider>(context).allSponsors;
+    final speakers = Provider.of<SpeakerProvider>(context).allSpeakers;
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -21,7 +21,7 @@ class SponsorsTypeAllScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0xFFEBEBEB),
         appBar: AppBar(
-          title: Text('All Sponsors'),
+          title: Text('All Speakers'),
           centerTitle: true,
         ),
         body: Container(
@@ -34,15 +34,16 @@ class SponsorsTypeAllScreen extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.builder(
-                  itemCount: sponsors.length,
+                  itemCount: speakers.length,
                   itemBuilder: (ctx, index) {
-                    return AllSponsorTile(
-                      id: sponsors[index].id,
-                      eventId: sponsors[index].eventId,
-                      type: sponsors[index].sponsorType,
-                      name: sponsors[index].name,
-                      category: sponsors[index].sponsorCategory,
-                      logo: sponsors[index].logo,
+                    return SpeakersCategoryAllTile(
+                      id: speakers[index].id,
+                      eventId: speakers[index].eventId,
+                      name: speakers[index].name,
+                      designation: speakers[index].designation,
+                      company: speakers[index].company,
+                      photo: speakers[index].photo,
+                      category: speakers[index].speakerCategory,
                     );
                   },
                 ),

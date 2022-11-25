@@ -10,7 +10,7 @@ class SpeakerModel {
   final String contactNumber;
   final String htmlBio;
   final int numberOfFavorites;
-  final String photoUrl;
+  final String photo;
   final bool isFavorite;
 
   SpeakerModel({
@@ -25,7 +25,7 @@ class SpeakerModel {
     required this.contactNumber,
     required this.htmlBio,
     required this.numberOfFavorites,
-    required this.photoUrl,
+    required this.photo,
     required this.isFavorite,
   });
 }
