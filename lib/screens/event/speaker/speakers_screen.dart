@@ -26,33 +26,19 @@ class SpeakersScreen extends StatelessWidget {
           child: Column(
             children: [
               SpeakerCategoryTile(
-                categoryName: "All Speakers",
+                categoryName: "All speakers",
                 categoryImage: 'assets/images/sample_agenda_banner.PNG',
                 routeName: SpeakersCategoryAllScreen.routeName,
               ),
+              for (var category in speakerCategory)
+                SpeakerCategoryTile(
+                  categoryName: "$category speakers",
+                  categoryImage: 'assets/images/sample_agenda_banner.PNG',
+                  routeName: SpeakersCategoryAllScreen.routeName,
+                ),
             ],
           ),
         ),
-        // child: ListView.builder(itemBuilder: itemBuilder),
-        // child: SingleChildScrollView(
-        //   child: Column(
-        //     children: [
-        //       SponsorsTypeTile(
-        //         sponsorType: "All Sponsors",
-        //         sponsorImage: 'assets/images/sample_agenda_banner.PNG',
-        //         routeName: SponsorsTypeAllScreen.routeName,
-        //       ),
-        //       const SizedBox(
-        //         height: 15,
-        //       ),
-        //       SponsorsTypeTile(
-        //         sponsorType: "Tier Sponsors",
-        //         sponsorImage: 'assets/images/sample_agenda_banner.PNG',
-        //         routeName: SponsorsTypeTierScreen.routeName,
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ),
     );
   }

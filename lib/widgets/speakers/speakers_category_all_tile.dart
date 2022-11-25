@@ -27,7 +27,7 @@ class SpeakersCategoryAllTile extends StatelessWidget {
         margin: const EdgeInsets.only(
           bottom: 10,
         ),
-        width: double.infinity,
+        height: 100,
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Colors.white,
@@ -55,57 +55,59 @@ class SpeakersCategoryAllTile extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding:
-                  const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 5),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
+            SizedBox(
+              width: 10,
+            ),
+            Hero(
+              tag: id,
+              child: CircleAvatar(
+                backgroundImage: AssetImage(photo),
+                radius: 35,
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Hero(
-                    tag: id,
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage(photo),
-                      radius: 35,
+                  Text(
+                    name,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF575757),
                     ),
                   ),
-                  SizedBox(
-                    width: 10,
+                  const SizedBox(
+                    height: 5,
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        name,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF575757),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        designation,
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Theme.of(context).primaryColor,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                      Text(
-                        company,
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor),
-                      ),
-                    ],
+                  Text(
+                    designation,
+                    maxLines: 1,
+                    softWrap: false,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Theme.of(context).primaryColor,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                  Text(
+                    company,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor),
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              width: 10,
             ),
           ],
         ),
