@@ -10,6 +10,7 @@ class SpeakersCategoryAllScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categoryName = ModalRoute.of(context)!.settings.arguments as String;
     final speakers = Provider.of<SpeakerProvider>(context).allSpeakers;
     return GestureDetector(
       onTap: () {
@@ -21,7 +22,7 @@ class SpeakersCategoryAllScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0xFFEBEBEB),
         appBar: AppBar(
-          title: Text('All Speakers'),
+          title: Text("$categoryName speakers"),
           centerTitle: true,
         ),
         body: Container(
@@ -44,6 +45,7 @@ class SpeakersCategoryAllScreen extends StatelessWidget {
                       company: speakers[index].company,
                       photo: speakers[index].photo,
                       category: speakers[index].speakerCategory,
+                      sideColor: speakers[index].sideColor,
                     );
                   },
                 ),

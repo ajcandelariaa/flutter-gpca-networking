@@ -17,7 +17,7 @@ class SpeakerCategoryTile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 10,),
       child: InkWell(
-        onTap: () => Navigator.of(context).pushNamed(routeName),
+        onTap: () => Navigator.of(context).pushNamed(routeName, arguments: categoryName),
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -36,7 +36,7 @@ class SpeakerCategoryTile extends StatelessWidget {
               ),
             ),
             Text(
-              categoryName,
+              "$categoryName speakers",
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

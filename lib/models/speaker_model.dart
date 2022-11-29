@@ -12,6 +12,7 @@ class SpeakerModel {
   final int numberOfFavorites;
   final String photo;
   final bool isFavorite;
+  final String sideColor;
 
   SpeakerModel({
     required this.id,
@@ -27,5 +28,6 @@ class SpeakerModel {
     required this.numberOfFavorites,
     required this.photo,
     required this.isFavorite,
+    required this.sideColor,
   });
 }

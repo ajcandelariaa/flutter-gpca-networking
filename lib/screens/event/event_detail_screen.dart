@@ -6,7 +6,7 @@ import 'package:gpca_networking/screens/event/exhibitor/exhibitors_screen.dart';
 import 'package:gpca_networking/screens/event/floor_plan/floor_plan_screen.dart';
 import 'package:gpca_networking/screens/event/media_partner/media_partners_screen.dart';
 import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partners_screen.dart';
-import 'package:gpca_networking/screens/event/my-meetings/my_meetings_screen.dart';
+import 'package:gpca_networking/screens/event/my_meetings/my_meetings_screen.dart';
 import 'package:gpca_networking/screens/event/notification/notifications_screen.dart';
 import 'package:gpca_networking/screens/event/press_releases/press_releases_screen.dart';
 import 'package:gpca_networking/screens/event/program/program_screen.dart';

@@ -4,6 +4,7 @@ import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_
 import 'package:gpca_networking/screens/event/program/session_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_screen.dart';
 import 'package:gpca_networking/screens/event/speaker/speakers_category_all_screen.dart';
+import 'package:gpca_networking/screens/event/speaker/speakers_category_dynamic_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsor_detail_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_all_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_type_associate_screen.dart';
@@ -18,7 +19,7 @@ import 'package:gpca_networking/screens/event/favorite/favorites_screen.dart';
 import 'package:gpca_networking/screens/event/floor_plan/floor_plan_screen.dart';
 import 'package:gpca_networking/screens/event/media_partner/media_partners_screen.dart';
 import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partners_screen.dart';
-import 'package:gpca_networking/screens/event/my-meetings/my_meetings_screen.dart';
+import 'package:gpca_networking/screens/event/my_meetings/my_meetings_screen.dart';
 import 'package:gpca_networking/screens/event/notification/notifications_screen.dart';
 import 'package:gpca_networking/screens/event/press_releases/press_releases_screen.dart';
 import 'package:gpca_networking/screens/event/profile/profile_screen.dart';
@@ -60,6 +61,7 @@ getRoutes() {
 
     SpeakersScreen.routeName: (context) => SpeakersScreen(),
     SpeakersCategoryAllScreen.routeName: (context) => SpeakersCategoryAllScreen(),
+    SpeakersCategoryDynamicScreen.routeName: (context) => SpeakersCategoryDynamicScreen(),
 
     SponsorsScreen.routeName: (context) => SponsorsScreen(),
     SponsorsTypeAllScreen.routeName: (context) => SponsorsTypeAllScreen(),

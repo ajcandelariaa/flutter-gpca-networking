@@ -1,4 +1,4 @@
 class ApiConstants {
-  static const String baseUrl = '';
-  static const String eventsListEndPoint = '';
+  static const String BASE_URL = '';
+  static const String END_POINT = '';
 }

@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsor_detail_screen.dart';
 
-class SpeakersCategoryAllTile extends StatelessWidget {
+class SpeakerCategoryDynamicTypeTile extends StatelessWidget {
   final String id;
   final String eventId;
   final String name;
   final String designation;
   final String company;
   final String photo;
-  final String category;
-  final String sideColor;
 
-  SpeakersCategoryAllTile({
+  SpeakerCategoryDynamicTypeTile({
     required this.id,
     required this.eventId,
     required this.name,
     required this.designation,
     required this.company,
     required this.photo,
-    required this.category,
-    required this.sideColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
+        padding: const EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 10),
         margin: const EdgeInsets.only(
           bottom: 10,
         ),
@@ -37,29 +34,6 @@ class SpeakersCategoryAllTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            RotatedBox(
-              quarterTurns: 3,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration: BoxDecoration(
-                  color: Color(int.parse(sideColor)),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                  ),
-                ),
-                child: FittedBox(
-                  child: Text(
-                    "$category\n speaker",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
             Hero(
               tag: id,
               child: CircleAvatar(
