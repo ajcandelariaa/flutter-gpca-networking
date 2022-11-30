@@ -3,6 +3,7 @@ import 'package:gpca_networking/screens/event/media_partner/media_partner_detail
 import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partner_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_screen.dart';
+import 'package:gpca_networking/screens/event/speaker/speaker_detail_screen.dart';
 import 'package:gpca_networking/screens/event/speaker/speakers_category_all_screen.dart';
 import 'package:gpca_networking/screens/event/speaker/speakers_category_dynamic_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsor_detail_screen.dart';
@@ -62,6 +63,7 @@ getRoutes() {
     SpeakersScreen.routeName: (context) => SpeakersScreen(),
     SpeakersCategoryAllScreen.routeName: (context) => SpeakersCategoryAllScreen(),
     SpeakersCategoryDynamicScreen.routeName: (context) => SpeakersCategoryDynamicScreen(),
+    SpeakerDetailScreen.routeName: (context) => SpeakerDetailScreen(),
 
     SponsorsScreen.routeName: (context) => SponsorsScreen(),
     SponsorsTypeAllScreen.routeName: (context) => SponsorsTypeAllScreen(),

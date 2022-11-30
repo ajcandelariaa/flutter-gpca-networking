@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/screens/event/speaker/speaker_detail_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsor_detail_screen.dart';
 
 class SpeakersCategoryAllTile extends StatelessWidget {
@@ -25,6 +26,7 @@ class SpeakersCategoryAllTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () => Navigator.of(context).pushNamed(SpeakerDetailScreen.routeName, arguments: [id, eventId]),
       child: Container(
         margin: const EdgeInsets.only(
           bottom: 10,
