@@ -33,7 +33,12 @@ class SpeakerDetailSession extends StatelessWidget {
             height: 3,
           ),
           for (var session in sessions)
-          SpeakerDetailSessionTile(),
+            SpeakerDetailSessionTile(
+              id: session.id,
+              title: session.title,
+              time: session.time,
+              date: session.date,
+            ),
         ],
       ),
     );

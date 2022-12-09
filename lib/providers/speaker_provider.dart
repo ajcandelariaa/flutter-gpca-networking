@@ -26,6 +26,12 @@ class SpeakerProvider with ChangeNotifier {
           time: "12:30 - 14:30",
           date: "December 06, 2022 | Tuesday | Day 1",
         ),
+        SpeakerSessionModel(
+          id: "2",
+          title: "Welcome Remarks",
+          time: "08:30 - 08:40",
+          date: "December 07, 2022 | Wednesday | Day 2",
+        ),
       ],
     ),
     SpeakerModel(
