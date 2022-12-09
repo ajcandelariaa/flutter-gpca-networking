@@ -13,6 +13,7 @@ class SpeakerModel {
   final String photo;
   final bool isFavorite;
   final String sideColor;
+  final List<SpeakerSessionModel> session;
 
   SpeakerModel({
     required this.id,
@@ -29,5 +30,20 @@ class SpeakerModel {
     required this.photo,
     required this.isFavorite,
     required this.sideColor,
+    required this.session,
+  });
+}
+
+class SpeakerSessionModel{
+  final String id;
+  final String title;
+  final String time;
+  final String date;
+
+  SpeakerSessionModel({
+    required this.id,
+    required this.title,
+    required this.time,
+    required this.date,
   });
 }
