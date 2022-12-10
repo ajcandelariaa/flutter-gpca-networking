@@ -21,16 +21,10 @@ class SpeakerProvider with ChangeNotifier {
       sideColor: "0xFF004250",
       session: [
         SpeakerSessionModel(
-          id: "1",
-          title: "Registration and Networking",
-          time: "12:30 - 14:30",
-          date: "December 06, 2022 | Tuesday | Day 1",
-        ),
-        SpeakerSessionModel(
           id: "2",
-          title: "Welcome Remarks",
-          time: "08:30 - 08:40",
-          date: "December 07, 2022 | Wednesday | Day 2",
+          title: "Leadership dialogue 1: Clean energy transition – The GCC’s opportunity towards world leadership",
+          time: "10:00 - 11:00",
+          date: "December 06, 2022 | Tuesday | Day 1",
         ),
       ],
     ),
@@ -42,7 +36,7 @@ class SpeakerProvider with ChangeNotifier {
       name: "H.E. Dr. Mohamed Bin Mubarak Bin Daina",
       designation:
           "Minister of Oil & Environment, Special Envoy for Climate Affairs,",
-      company: "The Institute of Energy Economics, Japan (IEEJ)",
+      company: "Qatar",
       emailAddress: "ajajcandelaria@gmail.com",
       contactNumber: "13123123",
       isFavorite: false,
