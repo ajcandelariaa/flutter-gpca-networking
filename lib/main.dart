@@ -5,6 +5,7 @@ import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/exhibitor_provider.dart';
 import 'package:gpca_networking/providers/media_partner_provider.dart';
 import 'package:gpca_networking/providers/meeting_room_partner_provider.dart';
+import 'package:gpca_networking/providers/program_provider.dart';
 import 'package:gpca_networking/providers/social_feeds_provider.dart';
 import 'package:gpca_networking/providers/speaker_provider.dart';
 import 'package:gpca_networking/providers/sponsor_provider.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ExhibitorProvider()),
         ChangeNotifierProvider(create: (_) => SponsorProvider()),
         ChangeNotifierProvider(create: (_) => SpeakerProvider()),
+        ChangeNotifierProvider(create: (_) => ProgramProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(

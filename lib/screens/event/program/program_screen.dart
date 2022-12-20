@@ -7,6 +7,7 @@ class ProgramScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // put list provider program
     return Scaffold(
       appBar: AppBar(
         title: const Text('Program'),
@@ -17,20 +18,11 @@ class ProgramScreen extends StatelessWidget {
           horizontal: 20,
           vertical: 15,
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: const [
-              ProgramTile(),
-              SizedBox(
-                height: 15,
-              ),
-              ProgramTile(),
-              SizedBox(
-                height: 15,
-              ),
-              ProgramTile(),
-            ],
-          ),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ProgramTile();
+          },
+          itemCount: 3,
         ),
       ),
     );
