@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/providers/program_provider.dart';
 import 'package:gpca_networking/widgets/program_tile.dart';
+import 'package:provider/provider.dart';
 
 class ProgramScreen extends StatelessWidget {
   const ProgramScreen({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class ProgramScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // put list provider program
+    final programs = Provider.of<ProgramProvider>(context).getPrograms("1");
     return Scaffold(
       appBar: AppBar(
         title: const Text('Program'),
@@ -20,9 +22,14 @@ class ProgramScreen extends StatelessWidget {
         ),
         child: ListView.builder(
           itemBuilder: (context, index) {
-            return ProgramTile();
+            return ProgramTile(
+              id: programs[index].id,
+              date: programs[index].date,
+              name: programs[index].name,
+              backgroundPicture: programs[index].backgroundPicture,
+            );
           },
-          itemCount: 3,
+          itemCount: programs.length,
         ),
       ),
     );

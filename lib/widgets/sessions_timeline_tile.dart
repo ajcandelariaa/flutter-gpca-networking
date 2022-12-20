@@ -106,39 +106,39 @@ class SessionsTimelineTile extends StatelessWidget {
                             //     style: TextStyle(color: Colors.grey[800]),
                             //   ),
                             SizedBox(height: 3,),
-                            Row(
-                              children: const [
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      'assets/images/sample_user.jpeg'),
-                                  radius: 8,
-                                ),
-                                SizedBox(width: 2,),
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      'assets/images/sample_agenda_banner.PNG'),
-                                  radius: 8,
-                                ),
-                                SizedBox(width: 2,),
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      'assets/images/sample_user.jpeg'),
-                                  radius: 8,
-                                ),
-                                SizedBox(width: 2,),
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      'assets/images/sc_banner.jpg'),
-                                  radius: 8,
-                                ),
-                                SizedBox(width: 2,),
-                                CircleAvatar(
-                                  backgroundImage: AssetImage(
-                                      'assets/images/sample_user.jpeg'),
-                                  radius: 8,
-                                ),
-                              ],
-                            ),
+                            // Row(
+                            //   children: const [
+                            //     CircleAvatar(
+                            //       backgroundImage: AssetImage(
+                            //           'assets/images/sample_user.jpeg'),
+                            //       radius: 8,
+                            //     ),
+                            //     SizedBox(width: 2,),
+                            //     CircleAvatar(
+                            //       backgroundImage: AssetImage(
+                            //           'assets/images/sample_agenda_banner.PNG'),
+                            //       radius: 8,
+                            //     ),
+                            //     SizedBox(width: 2,),
+                            //     CircleAvatar(
+                            //       backgroundImage: AssetImage(
+                            //           'assets/images/sample_user.jpeg'),
+                            //       radius: 8,
+                            //     ),
+                            //     SizedBox(width: 2,),
+                            //     CircleAvatar(
+                            //       backgroundImage: AssetImage(
+                            //           'assets/images/sc_banner.jpg'),
+                            //       radius: 8,
+                            //     ),
+                            //     SizedBox(width: 2,),
+                            //     CircleAvatar(
+                            //       backgroundImage: AssetImage(
+                            //           'assets/images/sample_user.jpeg'),
+                            //       radius: 8,
+                            //     ),
+                            //   ],
+                            // ),
                           ],
                         ),
                       ),

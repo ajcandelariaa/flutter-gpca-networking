@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/widgets/sessions_timeline_tile.dart';
+import 'package:gpca_networking/providers/program_session_date_provider.dart';
+import 'package:gpca_networking/widgets/program_session_date_container.dart';
+import 'package:provider/provider.dart';
 
 class SessionsScreen extends StatelessWidget {
   const SessionsScreen({Key? key}) : super(key: key);
@@ -7,6 +9,9 @@ class SessionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final programId = ModalRoute.of(context)!.settings.arguments;
+    final programSessionDates = Provider.of<ProgramSessionDateProvider>(context)
+        .getProgramDates(programId.toString());
     return DefaultTabController(
       length: 3,
       initialIndex: 0,
@@ -15,87 +20,21 @@ class SessionsScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Sessions'),
           centerTitle: true,
-          bottom: const TabBar(
+          bottom: TabBar(
             tabs: [
-              Tab(
-                text: 'TUE 06 DEC',
-              ),
-              Tab(
-                text: 'TUE 07 DEC',
-              ),
-              Tab(
-                text: 'TUE 08 DEC',
-              ),
+              for (var programSessionDate in programSessionDates)
+                Tab(
+                  text: programSessionDate.date,
+                ),
             ],
           ),
         ),
         body: TabBarView(
           children: [
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 15,
+            for (var programSessionDate in programSessionDates)
+              ProgramSessionDateContainer(
+                programSessionDateId: programSessionDate.id,
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SessionsTimelineTile(
-                      sessionStartTime: "08:30",
-                      sessionEndTime: "09:30",
-                      sessionTitle:
-                          "Registration and networking awd awd awd awd a awdawd ",
-                      sessionDescription:
-                          "awdawd awd awd awd awdawdawd aw awe dad",
-                      sessionIsFirst: true,
-                      sessionIsLast: false,
-                      sessionIndicatorXY: 0.5,
-                    ),
-                    SessionsTimelineTile(
-                      sessionStartTime: "08:30",
-                      sessionEndTime: "09:30",
-                      sessionTitle: "Registration and networking",
-                      sessionDescription: "",
-                      sessionIsFirst: false,
-                      sessionIsLast: false,
-                      sessionIndicatorXY: 0.5,
-                    ),
-                    SessionsTimelineTile(
-                      sessionStartTime: "08:30",
-                      sessionEndTime: "09:30",
-                      sessionTitle:
-                          "Registration and networking Registration and networking Registration and networking",
-                      sessionDescription: "",
-                      sessionIsFirst: false,
-                      sessionIsLast: false,
-                      sessionIndicatorXY: 0.5,
-                    ),
-                    SessionsTimelineTile(
-                      sessionStartTime: "08:30",
-                      sessionEndTime: "09:30",
-                      sessionTitle: "Registration and networking",
-                      sessionDescription: "",
-                      sessionIsFirst: false,
-                      sessionIsLast: false,
-                      sessionIndicatorXY: 0.5,
-                    ),
-                    SessionsTimelineTile(
-                      sessionStartTime: "08:30",
-                      sessionEndTime: "09:30",
-                      sessionTitle:
-                          "Registration and networking awd awd awd awd a awdawd ",
-                      sessionDescription:
-                          "awdawd awd awd awd awdawdawd aw awe dad",
-                      sessionIsFirst: false,
-                      sessionIsLast: true,
-                      sessionIndicatorXY: 0.5,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Center(),
-            Center(),
           ],
         ),
       ),
