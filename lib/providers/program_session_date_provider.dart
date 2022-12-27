@@ -35,17 +35,17 @@ class ProgramSessionDateProvider with ChangeNotifier {
     ),
     ProgramSessionDateModel(
       id: "7",
-      programId: "2",
+      programId: "3",
       date: "TUE 06 JAN",
     ),
     ProgramSessionDateModel(
       id: "8",
-      programId: "2",
+      programId: "3",
       date: "WED 07 JAN",
     ),
     ProgramSessionDateModel(
       id: "9",
-      programId: "2",
+      programId: "3",
       date: "THU 08 JAN",
     ),
   ];

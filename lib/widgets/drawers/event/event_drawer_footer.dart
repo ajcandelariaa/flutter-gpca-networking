@@ -9,12 +9,13 @@ class EventDrawerFooter extends StatelessWidget {
       children: [
         Container(
           child: Image.asset(
-            'assets/images/gpca-networking-logo.png',
+            'assets/images/sabic_logo.png',
             width: 150,
+            fit: BoxFit.fill,
           ),
         ),
-        Text(
-          'App version: 2.0.0',
+        const Text(
+          'Sponsored by:',
           style: TextStyle(fontSize: 14, color: Colors.grey),
         ),
       ],

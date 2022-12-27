@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
+import 'package:gpca_networking/widgets/dynamic_html/html_text.dart';
 import 'package:gpca_networking/widgets/login_form.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -70,30 +69,7 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                       horizontal: 5,
                     ),
-                    child: Html(
-                      data: eventData.loginHTMLData,
-                      onLinkTap: (url, context, attributes, element) async {
-                        var urlF = Uri.parse(url.toString());
-                        if (await canLaunchUrl(urlF)) {
-                          await launchUrl(urlF,
-                              mode: LaunchMode.externalApplication);
-                        } else {
-                          String urlEncoded = Uri.encodeComponent(url.toString());
-                          urlF = Uri.parse('mailto:$urlEncoded');
-                          if (await canLaunchUrl(urlF)) {
-                            await launchUrl(urlF);
-                          } else {
-                            String urlEncoded = Uri.encodeComponent(url.toString());
-                            urlF = Uri.parse('tel:$urlEncoded');
-                            if (await canLaunchUrl(urlF)) {
-                              await launchUrl(urlF);
-                            } else {
-                              throw 'Could not launch $urlF';
-                            }
-                          }
-                        }
-                      },
-                    ),
+                    child: HTMLText(htmlText: eventData.loginHTMLData),
                   ),
                 ],
               ),

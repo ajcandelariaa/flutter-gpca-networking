@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/event_model.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/widgets/drawers/app/app_drawer.dart';
-import 'package:gpca_networking/widgets/event/event.dart';
+import 'package:gpca_networking/widgets/event/event_tile.dart';
 import 'package:provider/provider.dart';
 
 class EventsListScreen extends StatelessWidget {
@@ -52,7 +52,7 @@ class EventsListScreen extends StatelessWidget {
           child: ListView.builder(
             itemCount: eventsData.length,
             itemBuilder: (ctx, index) {
-              return Event(
+              return EventTile(
                 eventId: eventsData[index].id,
                 eventName: eventsData[index].name,
                 eventDate: eventsData[index].date,

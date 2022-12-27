@@ -16,7 +16,8 @@ import 'package:gpca_networking/screens/event/speaker/speakers_screen.dart';
 import 'package:gpca_networking/screens/event/sponsor/sponsors_screen.dart';
 import 'package:gpca_networking/screens/event/venue/venue_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
-import 'package:gpca_networking/widgets/event/event_detail_icons.dart';
+import 'package:gpca_networking/widgets/event/event_detail_header.dart';
+import 'package:gpca_networking/widgets/event/event_detail_icon.dart';
 import 'package:badges/badges.dart';
 
 class EventDetailScreen extends StatelessWidget {
@@ -84,13 +85,7 @@ class EventDetailScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/images/sc_banner.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
+              EventDetailHeader(imageUrl: 'assets/images/sc_banner.jpg'),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
                 child: Column(

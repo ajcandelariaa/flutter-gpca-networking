@@ -3,14 +3,14 @@ import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/screens/main/login_screen.dart';
 import 'package:provider/provider.dart';
 
-class Event extends StatelessWidget {
+class EventTile extends StatelessWidget {
   final String eventId;
   final String eventName;
   final String eventDate;
   final String eventVenue;
   final String eventLogo;
 
-  Event({
+  EventTile({
     required this.eventId,
     required this.eventName,
     required this.eventDate,
