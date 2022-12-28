@@ -19,7 +19,8 @@ class FavoritesScreen extends StatelessWidget {
       onWillPop: () => _onBackButtonPress(context),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Favorites'),
+          title: const Text('Favorites'),
+          centerTitle: true,
         ),
         drawer: EventDrawer(),
       ),

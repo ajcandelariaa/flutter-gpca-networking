@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:gpca_networking/widgets/dynamic_html/html_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -29,24 +30,7 @@ class AboutScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          child: Column(
-            children: [
-              Html(
-                data: htmlData,
-                onLinkTap: (url, context, attributes, element) async {
-                  final urlF = Uri.parse(url.toString());
-                  if (await canLaunchUrl(urlF)){
-                    await launchUrl(
-                      urlF,
-                      mode: LaunchMode.externalApplication
-                    );
-                  } else {
-                    throw 'Could not launch $urlF';
-                  }
-                },
-              ),
-            ],
-          ),
+          child: HTMLText(htmlText: htmlData),
         ),
       ),
     );

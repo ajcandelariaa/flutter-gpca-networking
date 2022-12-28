@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/app_drawer_provider.dart';
+import 'package:gpca_networking/providers/event_detail_navigation_provider.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/exhibitor_provider.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => EventDetailNavigationProvider()),
         ChangeNotifierProvider(create: (_) => EventProvider()),
         ChangeNotifierProvider(create: (_) => AppDrawerProvider()),
         ChangeNotifierProvider(create: (_) => EventDrawerProvider()),

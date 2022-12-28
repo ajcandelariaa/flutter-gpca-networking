@@ -20,6 +20,7 @@ class ProfileScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Profile'),
+          centerTitle: true,
         ),
         drawer: EventDrawer(),
       ),
