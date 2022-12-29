@@ -5,7 +5,9 @@ class EventModel {
   final String venue;
   final String logo;
   final String logoInverted;
-  final String loginHTMLData;
+  final String htmlLoginText;
+  final String htmlAboutText;
+  final String htmlCovidText;
 
   EventModel({
     required this.id,
@@ -14,6 +16,8 @@ class EventModel {
     required this.venue,
     required this.logo,
     required this.logoInverted,
-    required this.loginHTMLData,
+    required this.htmlLoginText,
+    required this.htmlAboutText,
+    required this.htmlCovidText,
   });
 }

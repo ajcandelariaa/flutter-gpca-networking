@@ -69,7 +69,7 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                       horizontal: 5,
                     ),
-                    child: HTMLText(htmlText: eventData.loginHTMLData),
+                    child: HTMLText(htmlText: eventData.htmlLoginText),
                   ),
                 ],
               ),
