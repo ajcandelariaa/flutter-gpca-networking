@@ -22,6 +22,7 @@ class ProgramSessionDateContainer extends StatelessWidget {
           children: [
             for (var programSession in programSessions)
               SessionsTimelineTile(
+                sessionId: programSession.id,
                 sessionStartTime: programSession.startTime,
                 sessionEndTime: programSession.endTime,
                 sessionTitle: programSession.title,

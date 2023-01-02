@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:gpca_networking/models/program_session_model.dart';
 
 class ProgramSessionProvider with ChangeNotifier {
@@ -192,7 +193,7 @@ class ProgramSessionProvider with ChangeNotifier {
           designation:
               "Minister of Oil & Environment, Special Envoy for Climate Affairs,",
           company: "Qatar",
-          speakerCategory: "Panellists:",
+          speakerCategory: "Panellists",
           photo: "assets/images/sample_user.jpeg",
         ),
       ],
@@ -201,5 +202,23 @@ class ProgramSessionProvider with ChangeNotifier {
 
   List<ProgramSessionModel> getProgramSessions(String programSessionDateId){
     return _programSessions.where((programSession) => programSession.programSessionDateId == programSessionDateId).toList();
+  }
+
+  ProgramSessionModel findById (String programSessionId){
+    return _programSessions.firstWhere((programSession) => programSession.id == programSessionId);
+  }
+
+  List<String> getSessionSpeakers(String programSessionId){
+    var sCat = <String>{};
+    var sessionSpeakers = _programSessions.firstWhere((programSession) => programSession.id == programSessionId).speakers;
+    var speakerTypes = sessionSpeakers.where((category) => sCat.add(category.speakerCategory)).toList();
+
+    return sCat.toList();
+  }
+
+  List<ProgramSessionSpeakerModel> getSpeakers(String programSessionId, String speakerCategory){
+    var sessionSpeakers = _programSessions.firstWhere((programSession) => programSession.id == programSessionId).speakers;
+
+    return sessionSpeakers.where((speaker) => speaker.speakerCategory == speakerCategory).toList();
   }
 }

@@ -4,11 +4,12 @@ import 'package:gpca_networking/screens/event/program/session_detail_screen.dart
 import 'package:timeline_tile/timeline_tile.dart';
 
 class SessionsTimelineTile extends StatelessWidget {
-  String sessionStartTime, sessionEndTime, sessionTitle, sessionDescription;
+  String sessionId, sessionStartTime, sessionEndTime, sessionTitle, sessionDescription;
   bool sessionIsFirst, sessionIsLast;
   double sessionIndicatorXY;
 
   SessionsTimelineTile({
+    required this.sessionId,
     required this.sessionStartTime,
     required this.sessionEndTime,
     required this.sessionTitle,
@@ -49,7 +50,7 @@ class SessionsTimelineTile extends StatelessWidget {
         ],
       ),
       endChild: InkWell(
-        onTap: () => Navigator.of(context).pushNamed(SessionDetailScreen.routeName),
+        onTap: () => Navigator.of(context).pushNamed(SessionDetailScreen.routeName, arguments: sessionId),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
