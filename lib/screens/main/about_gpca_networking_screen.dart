@@ -20,6 +20,7 @@ class AboutGpcaNetworkingScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('About GPCA Networking'),
+          centerTitle: true,
         ),
         drawer: AppDrawer(),
         body: Container(),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
+import 'package:gpca_networking/screens/event/contacts/contacts_screen.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
 import 'package:gpca_networking/screens/event/favorite/favorites_screen.dart';
+import 'package:gpca_networking/screens/event/feedback/feedback_screen.dart';
 import 'package:gpca_networking/screens/event/profile/profile_screen.dart';
 import 'package:gpca_networking/screens/main/events_list_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer_body_tile.dart';
@@ -83,16 +85,40 @@ class EventDrawerBody extends StatelessWidget {
           context.read<EventDrawerProvider>().activePage == 2,
         ),
         EventDrawerBodyTile(
-          'Favorites',
-          Icons.favorite,
+          'Contacts',
+          Icons.perm_contact_calendar_outlined,
           () {
             context.read<EventDrawerProvider>().activePage == 3
                 ? null
                 : Navigator.of(context)
-                    .pushReplacementNamed(FavoritesScreen.routeName);
+                    .pushReplacementNamed(ContactsScreen.routeName);
             context.read<EventDrawerProvider>().setActivePage(3);
           },
           context.read<EventDrawerProvider>().activePage == 3,
+        ),
+        EventDrawerBodyTile(
+          'Favorites',
+          Icons.favorite,
+          () {
+            context.read<EventDrawerProvider>().activePage == 4
+                ? null
+                : Navigator.of(context)
+                    .pushReplacementNamed(FavoritesScreen.routeName);
+            context.read<EventDrawerProvider>().setActivePage(4);
+          },
+          context.read<EventDrawerProvider>().activePage == 4,
+        ),
+        EventDrawerBodyTile(
+          'Feedback',
+          Icons.feedback_outlined,
+          () {
+            context.read<EventDrawerProvider>().activePage == 5
+                ? null
+                : Navigator.of(context)
+                    .pushReplacementNamed(FeedbackScreen.routeName);
+            context.read<EventDrawerProvider>().setActivePage(5);
+          },
+          context.read<EventDrawerProvider>().activePage == 5,
         ),
         EventDrawerBodyTile(
           'Events List',
@@ -105,7 +131,7 @@ class EventDrawerBody extends StatelessWidget {
               context.read<ThemeProvider>().toggleThemeData('main');
             }
           },
-          context.read<EventDrawerProvider>().activePage == 4,
+          context.read<EventDrawerProvider>().activePage == 6,
         ),
         EventDrawerBodyTile(
           'Logout',
@@ -122,7 +148,7 @@ class EventDrawerBody extends StatelessWidget {
                   'Logged out succesfully!',
                 ),
               );
-
+    
               ScaffoldMessenger.of(context)
                 ..removeCurrentSnackBar()
                 ..showSnackBar(snackBar);
@@ -133,7 +159,7 @@ class EventDrawerBody extends StatelessWidget {
               context.read<ThemeProvider>().toggleThemeData('main');
             }
           },
-          context.read<EventDrawerProvider>().activePage == 5,
+          context.read<EventDrawerProvider>().activePage == 7,
         ),
       ],
     );

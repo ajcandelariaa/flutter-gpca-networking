@@ -20,6 +20,7 @@ class TermsConditionScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Terms and Condition'),
+          centerTitle: true,
         ),
         drawer: AppDrawer(),
         body: Container(),

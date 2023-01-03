@@ -10,6 +10,7 @@ class AppDrawerFooter extends StatelessWidget {
         Container(
           child: Image.asset('assets/images/gpca-networking-logo.png', width: 150,),
         ),
+        SizedBox(height: 5,),
         Text('App version: 2.0.0', style: TextStyle(fontSize: 14, color: Colors.grey),),
       ],
     );

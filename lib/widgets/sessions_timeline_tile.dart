@@ -21,6 +21,8 @@ class SessionsTimelineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final linexy = screenWidth <= 600 ? 0.18 : 0.1;
     return TimelineTile(
       indicatorStyle: IndicatorStyle(
         padding: EdgeInsets.symmetric(horizontal: 10),
@@ -33,7 +35,7 @@ class SessionsTimelineTile extends StatelessWidget {
       beforeLineStyle: LineStyle(color: Colors.grey.shade300, thickness: 1.5),
       axis: TimelineAxis.vertical,
       alignment: TimelineAlign.manual,
-      lineXY: 0.18,
+      lineXY: linexy,
       isLast: sessionIsLast,
       isFirst: sessionIsFirst,
       startChild: Column(

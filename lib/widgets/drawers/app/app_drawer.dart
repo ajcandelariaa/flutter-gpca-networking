@@ -15,12 +15,15 @@ class AppDrawer extends StatelessWidget {
           children: [
             const AppDrawerHeader(),
             Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppDrawerBody(),
-                  AppDrawerFooter(),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    AppDrawerBody(),
+                    SizedBox(height: 20,),
+                    AppDrawerFooter(),
+                  ],
+                ),
               ),
             ),
           ],

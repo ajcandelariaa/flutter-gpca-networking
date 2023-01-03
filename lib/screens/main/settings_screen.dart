@@ -20,6 +20,7 @@ class SettingsScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Settings'),
+          centerTitle: true,
         ),
         drawer: AppDrawer(),
         body: Container(),

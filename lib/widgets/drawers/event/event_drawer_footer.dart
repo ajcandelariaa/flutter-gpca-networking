@@ -7,17 +7,23 @@ class EventDrawerFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Image.asset(
-            'assets/images/sabic_logo.png',
-            width: 150,
-            fit: BoxFit.fill,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const Text(
+              'Sponsored by:',
+              style: TextStyle(fontSize: 14, color: Colors.grey),
+            ),
+            Container(
+              child: Image.asset(
+                'assets/images/sabic_logo.png',
+                width: 150,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
         ),
-        const Text(
-          'Sponsored by:',
-          style: TextStyle(fontSize: 14, color: Colors.grey),
-        ),
+        Text("App Version: 2.0.0"),
       ],
     );
   }

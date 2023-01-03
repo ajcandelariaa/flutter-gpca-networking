@@ -15,12 +15,14 @@ class EventDrawer extends StatelessWidget {
           children: [
             const EventDrawerHeader(),
             Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  EventDrawerBody(),
-                  EventDrawerFooter(),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    EventDrawerBody(),
+                    EventDrawerFooter(),
+                  ],
+                ),
               ),
             ),
           ],

@@ -20,6 +20,7 @@ class RateThisAppScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Rate this app'),
+          centerTitle: true,
         ),
         drawer: AppDrawer(),
         body: Container(),
