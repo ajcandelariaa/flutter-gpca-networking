@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/exhibitor_model.dart';
 import 'package:gpca_networking/widgets/favorites/favorite_exhibitor_tile.dart';
-import 'package:gpca_networking/widgets/favorites/favorite_speaker_tile.dart';
 
 class FavoriteExhibitorsScreen extends StatelessWidget {
   const FavoriteExhibitorsScreen({Key? key}) : super(key: key);

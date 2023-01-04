@@ -15,6 +15,7 @@ import 'package:gpca_networking/screens/event/favorite/favorite_speakers_screen.
 import 'package:gpca_networking/screens/event/favorite/favorite_sponsors_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
 import 'package:gpca_networking/widgets/favorites/favorite_category_tile.dart';
+import 'package:gpca_networking/widgets/notifications/app_bar_notification_badge.dart';
 import 'package:provider/provider.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -28,16 +29,16 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final speakers =
-        Provider.of<SpeakerProvider>(context).favoriteSpeakers("1");
-    final exhibitors =
-        Provider.of<ExhibitorProvider>(context).favoriteExhibitors("1");
-    final sponsors =
-        Provider.of<SponsorProvider>(context).favoriteSponsors("1");
     final sessions =
         Provider.of<ProgramSessionProvider>(context).favoriteSessions("1");
-    final meetingRoomPartners =
-        Provider.of<MeetingRoomPartnerProvider>(context).favoriteMeetingRoomPartners("1");
+    final speakers =
+        Provider.of<SpeakerProvider>(context).favoriteSpeakers("1");
+    final sponsors =
+        Provider.of<SponsorProvider>(context).favoriteSponsors("1");
+    final exhibitors =
+        Provider.of<ExhibitorProvider>(context).favoriteExhibitors("1");
+    final meetingRoomPartners = Provider.of<MeetingRoomPartnerProvider>(context)
+        .favoriteMeetingRoomPartners("1");
     final mediaPartners =
         Provider.of<MediaPartnerProvider>(context).favoriteMediaPartners("1");
 
@@ -47,6 +48,9 @@ class FavoritesScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Favorites'),
           centerTitle: true,
+          actions: [
+            AppBarNotificationBadge(),
+          ],
         ),
         drawer: EventDrawer(),
         body: Container(

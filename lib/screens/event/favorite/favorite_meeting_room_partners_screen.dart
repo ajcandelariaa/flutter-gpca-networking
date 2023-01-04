@@ -17,10 +17,7 @@ class FavoriteMeetingRoomPartnersScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Favorite Meeting Room Partners",
-          style: TextStyle(fontSize: 14),
-        ),
+        title: const Text("Favorite Meeting Room Partners"),
         centerTitle: true,
       ),
       body: Container(

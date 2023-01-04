@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
+import 'package:gpca_networking/widgets/notifications/app_bar_notification_badge.dart';
 import 'package:provider/provider.dart';
 
 class ContactsScreen extends StatelessWidget {
@@ -21,6 +22,9 @@ class ContactsScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Contacts'),
           centerTitle: true,
+          actions: [
+            AppBarNotificationBadge(),
+          ],
         ),
         drawer: EventDrawer(),
       ),

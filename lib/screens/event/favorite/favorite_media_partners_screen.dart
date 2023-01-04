@@ -5,7 +5,7 @@ import 'package:gpca_networking/widgets/favorites/favorite_media_partner_tile.da
 class FavoriteMediaPartnersScreen extends StatelessWidget {
   const FavoriteMediaPartnersScreen({Key? key}) : super(key: key);
 
-  static const routeName = "/favorite-exhibitors-screen";
+  static const routeName = "/favorite-media-partners-screen";
 
   @override
   Widget build(BuildContext context) {
