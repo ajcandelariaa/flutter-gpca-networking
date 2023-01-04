@@ -14,6 +14,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "08:30",
       endTime: "08:50",
       date: "December 06, 2022 | Tuesday | Day 1",
+      isFavorite: true,
+      numberOfFavorites: 1,
       sponsors: [
         ProgramSessionSponsorModel(
           id: "1",
@@ -34,6 +36,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "08:50",
       endTime: "09:30",
       date: "December 06, 2022 | Tuesday | Day 1",
+      isFavorite: true,
+      numberOfFavorites: 1,
       sponsors: [
         ProgramSessionSponsorModel(
           id: "1",
@@ -61,6 +65,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "10:00",
       endTime: "10:10",
       date: "December 06, 2022 | Tuesday | Day 1",
+      isFavorite: false,
+      numberOfFavorites: 0,
       sponsors: [],
       speakers: [
         ProgramSessionSpeakerModel(
@@ -92,6 +98,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "08:30",
       endTime: "onwards",
       date: "December 07, 2022 | Wednesday | Day 2",
+      isFavorite: false,
+      numberOfFavorites: 0,
       sponsors: [
         ProgramSessionSponsorModel(
           id: "1",
@@ -119,6 +127,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "10:00",
       endTime: "10:10",
       date: "December 07, 2022 | Wednesday | Day 2",
+      isFavorite: false,
+      numberOfFavorites: 0,
       sponsors: [],
       speakers: [
         ProgramSessionSpeakerModel(
@@ -150,6 +160,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "08:30",
       endTime: "onwards",
       date: "December 08, 2022 | Thursday | Day 3",
+      isFavorite: false,
+      numberOfFavorites: 0,
       sponsors: [
         ProgramSessionSponsorModel(
           id: "1",
@@ -177,6 +189,8 @@ class ProgramSessionProvider with ChangeNotifier {
       startTime: "10:00",
       endTime: "10:10",
       date: "December 08, 2022 | Thursday | Day 3",
+      isFavorite: false,
+      numberOfFavorites: 0,
       sponsors: [],
       speakers: [
         ProgramSessionSpeakerModel(
@@ -220,5 +234,10 @@ class ProgramSessionProvider with ChangeNotifier {
     var sessionSpeakers = _programSessions.firstWhere((programSession) => programSession.id == programSessionId).speakers;
 
     return sessionSpeakers.where((speaker) => speaker.speakerCategory == speakerCategory).toList();
+  }
+
+  
+  List<ProgramSessionModel> favoriteSessions(String eventId) {
+    return _programSessions.where((programSession) => programSession.isFavorite == true).toList();
   }
 }

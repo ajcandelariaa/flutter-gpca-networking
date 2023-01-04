@@ -4,13 +4,21 @@ class FavoriteCategoryTile extends StatelessWidget {
   final String category;
   final IconData icon;
   final String routeName;
+  final int numberOfFavorites;
+  dynamic favoriteLists;
 
-  FavoriteCategoryTile({required this.category, required this.icon, required this.routeName,});
+  FavoriteCategoryTile({
+    required this.category,
+    required this.icon,
+    required this.routeName,
+    required this.numberOfFavorites,
+    required this.favoriteLists,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed(routeName),
+      onTap: () => Navigator.of(context).pushNamed(routeName, arguments: favoriteLists),
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 15,
@@ -49,7 +57,7 @@ class FavoriteCategoryTile extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: Center(
-                child: Text("0"),
+                child: Text(numberOfFavorites.toString()),
               ),
             ),
           ],

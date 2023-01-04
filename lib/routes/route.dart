@@ -1,6 +1,11 @@
 import 'package:gpca_networking/screens/event/contacts/contacts_screen.dart';
 import 'package:gpca_networking/screens/event/exhibitor/exhibitor_detail_screen.dart';
+import 'package:gpca_networking/screens/event/favorite/favorite_exhibitors_screen.dart';
+import 'package:gpca_networking/screens/event/favorite/favorite_media_partners_screen.dart';
+import 'package:gpca_networking/screens/event/favorite/favorite_meeting_room_partners_screen.dart';
+import 'package:gpca_networking/screens/event/favorite/favorite_sessions_screen.dart';
 import 'package:gpca_networking/screens/event/favorite/favorite_speakers_screen.dart';
+import 'package:gpca_networking/screens/event/favorite/favorite_sponsors_screen.dart';
 import 'package:gpca_networking/screens/event/feedback/feedback_screen.dart';
 import 'package:gpca_networking/screens/event/media_partner/media_partner_detail_screen.dart';
 import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partner_detail_screen.dart';
@@ -57,7 +62,12 @@ getRoutes() {
     FeedbackScreen.routeName: (context) => FeedbackScreen(),
 
     FavoritesScreen.routeName: (context) => FavoritesScreen(),
+    FavoriteSessionsScreen.routeName: (context) => FavoriteSessionsScreen(),
     FavoriteSpeakersScreen.routeName: (context) => FavoriteSpeakersScreen(),
+    FavoriteExhibitorsScreen.routeName: (context) => FavoriteExhibitorsScreen(),
+    FavoriteSponsorsScreen.routeName: (context) => FavoriteSponsorsScreen(),
+    FavoriteMeetingRoomPartnersScreen.routeName: (context) => FavoriteMeetingRoomPartnersScreen(),
+    FavoriteMediaPartnersScreen.routeName: (context) => FavoriteMediaPartnersScreen(),
 
     NotificationsScreen.routeName: (context) => NotificationsScreen(),
 

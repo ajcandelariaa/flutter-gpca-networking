@@ -1,13 +1,15 @@
 class ProgramSessionModel {
   final String id;
   final String programSessionDateId;
-  final bool sessionIsFirst;
-  final bool sessionIsLast;
   final String title;
   final String htmlDescription;
   final String startTime;
   final String endTime;
   final String date;
+  final bool sessionIsFirst;
+  final bool sessionIsLast;
+  final bool isFavorite;
+  final int numberOfFavorites;
   final List<ProgramSessionSponsorModel> sponsors;
   final List<ProgramSessionSpeakerModel> speakers;
 
@@ -20,6 +22,8 @@ class ProgramSessionModel {
     required this.htmlDescription,
     required this.startTime,
     required this.endTime,
+    required this.isFavorite,
+    required this.numberOfFavorites,
     required this.date,
     required this.sponsors,
     required this.speakers,
