@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/media_partner_model.dart';
 import 'package:gpca_networking/providers/media_partner_provider.dart';
-import 'package:gpca_networking/widgets/media_partner_tile.dart';
-import 'package:gpca_networking/widgets/search_bar.dart';
+import 'package:gpca_networking/widgets/media_partners/media_partner_tile.dart';
+import 'package:gpca_networking/widgets/search/search_bar.dart';
 import 'package:provider/provider.dart';
 
 class MediaPartnersScreen extends StatelessWidget {

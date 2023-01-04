@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/program_session_provider.dart';
-import 'package:gpca_networking/widgets/sessions_timeline_tile.dart';
+import 'package:gpca_networking/widgets/programs/sessions_timeline_tile.dart';
 import 'package:provider/provider.dart';
 
 class ProgramSessionDateContainer extends StatelessWidget {

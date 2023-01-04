@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/program_session_date_provider.dart';
-import 'package:gpca_networking/widgets/program_session_date_container.dart';
+import 'package:gpca_networking/widgets/programs/program_session_date_container.dart';
 import 'package:provider/provider.dart';
 
 class SessionsScreen extends StatelessWidget {

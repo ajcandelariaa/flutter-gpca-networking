@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/program_provider.dart';
-import 'package:gpca_networking/widgets/program_tile.dart';
+import 'package:gpca_networking/widgets/programs/program_tile.dart';
 import 'package:provider/provider.dart';
 
 class ProgramScreen extends StatelessWidget {

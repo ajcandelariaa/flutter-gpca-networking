@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/speaker_provider.dart';
-import 'package:gpca_networking/widgets/search_bar.dart';
+import 'package:gpca_networking/widgets/search/search_bar.dart';
 import 'package:gpca_networking/widgets/speakers/speaker_category_dynamic_tile.dart';
 import 'package:provider/provider.dart';
 

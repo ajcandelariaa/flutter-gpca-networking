@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gpca_networking/widgets/forgot_password_form.dart';
+import 'package:gpca_networking/widgets/forms/forgot_password_form.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);

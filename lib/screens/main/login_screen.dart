@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
 import 'package:gpca_networking/widgets/dynamic_html/html_text.dart';
-import 'package:gpca_networking/widgets/login_form.dart';
+import 'package:gpca_networking/widgets/forms/login_form.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {

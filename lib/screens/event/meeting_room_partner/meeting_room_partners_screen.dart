@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/meeting_room_partner_provider.dart';
-import 'package:gpca_networking/widgets/meeting_room_partner_tile.dart';
-import 'package:gpca_networking/widgets/search_bar.dart';
+import 'package:gpca_networking/widgets/meeting_room_partners/meeting_room_partner_tile.dart';
+import 'package:gpca_networking/widgets/search/search_bar.dart';
 import 'package:provider/provider.dart';
 
 class MeetingRoomPartnersScreen extends StatelessWidget {

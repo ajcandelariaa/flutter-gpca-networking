@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_detail_navigation_provider.dart';
 import 'package:gpca_networking/screens/event/notification/notifications_screen.dart';
-import 'package:gpca_networking/widgets/app_bar/event_detail_app_bar.dart';
+import 'package:gpca_networking/widgets/app_bars/event_detail_app_bar.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
-import 'package:gpca_networking/widgets/event/event_detail_header.dart';
-import 'package:gpca_networking/widgets/event/event_detail_icon.dart';
+import 'package:gpca_networking/widgets/events/event_detail_header.dart';
+import 'package:gpca_networking/widgets/events/event_detail_icon.dart';
 import 'package:badges/badges.dart';
 import 'package:provider/provider.dart';
 

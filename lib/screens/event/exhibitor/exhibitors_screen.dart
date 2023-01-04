@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/exhibitor_provider.dart';
-import 'package:gpca_networking/widgets/exhibitor_tile.dart';
-import 'package:gpca_networking/widgets/search_bar.dart';
+import 'package:gpca_networking/widgets/exhibitors/exhibitor_tile.dart';
+import 'package:gpca_networking/widgets/search/search_bar.dart';
 import 'package:provider/provider.dart';
 
 class ExhibitorsScreen extends StatelessWidget {
