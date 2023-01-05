@@ -38,7 +38,7 @@ class FeedbackScreen extends StatelessWidget {
                   child: Image.asset(
                     "assets/images/feedback_image.png",
                     fit: BoxFit.cover,
-                    width: 300,
+                    width: 250,
                   ),
                 ),
                 SizedBox(height: 20,),
