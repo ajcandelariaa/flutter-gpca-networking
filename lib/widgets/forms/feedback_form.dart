@@ -1,32 +1,48 @@
 import 'package:flutter/material.dart';
 
-class FeedbackForm extends StatelessWidget {
+class FeedbackForm extends StatefulWidget {
   const FeedbackForm({Key? key}) : super(key: key);
 
   @override
+  State<FeedbackForm> createState() => _FeedbackFormState();
+}
+
+class _FeedbackFormState extends State<FeedbackForm> {
+  @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: Form(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Please rate your experience:"),
-            SizedBox(
+            const Text("Please rate your experience:"),
+            const SizedBox(
+              height: 5,
+            ),
+            Row(
+              children: [
+                Icon(Icons.emoji_emotions_outlined),
+                Icon(Icons.emoji_emotions_outlined),
+                Icon(Icons.emoji_emotions_outlined),
+                Icon(Icons.emoji_emotions_outlined),
+                Icon(Icons.emoji_emotions_outlined),
+              ],
+            ),
+            const SizedBox(
               height: 15,
             ),
-            Text("Additional Comments:"),
-            SizedBox(
+            const Text("Additional Comments:"),
+            const SizedBox(
               height: 10,
             ),
             TextFormField(
               keyboardType: TextInputType.text,
-              
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            ElevatedButton(
+            const ElevatedButton(
               onPressed: null,
               child: Text("Submit"),
             ),

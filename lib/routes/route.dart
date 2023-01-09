@@ -1,3 +1,4 @@
+import 'package:gpca_networking/screens/event/announcements/announcements_screen.dart';
 import 'package:gpca_networking/screens/event/contacts/contacts_screen.dart';
 import 'package:gpca_networking/screens/event/exhibitor/exhibitor_detail_screen.dart';
 import 'package:gpca_networking/screens/event/favorite/favorite_exhibitors_screen.dart';
@@ -71,6 +72,7 @@ getRoutes() {
 
     NotificationsScreen.routeName: (context) => NotificationsScreen(),
 
+    AnnouncementsScreen.routeName: (context) => AnnouncementsScreen(),
     AboutScreen.routeName: (context) => AboutScreen(),
     CovidGuidelinesScreen.routeName: (context) => CovidGuidelinesScreen(),
 

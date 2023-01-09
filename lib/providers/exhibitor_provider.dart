@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/exhibitor_model.dart';
-import 'package:gpca_networking/models/meeting_room_partner_model.dart';
 
 class ExhibitorProvider with ChangeNotifier {
   final List<ExhibitorModel> _exhibitors = [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/models/event_detail_navigation_model.dart';
 import 'package:gpca_networking/screens/event/about/about_screen.dart';
+import 'package:gpca_networking/screens/event/announcements/announcements_screen.dart';
 import 'package:gpca_networking/screens/event/attendees/attendees_screen.dart';
 import 'package:gpca_networking/screens/event/covid/covid_guidelines_screen.dart';
 import 'package:gpca_networking/screens/event/exhibitor/exhibitors_screen.dart';
@@ -18,6 +19,12 @@ import 'package:gpca_networking/screens/event/venue/venue_screen.dart';
 
 class EventDetailNavigationProvider with ChangeNotifier {
   final List<EventDetailNavigationModel> _navigations = [
+    EventDetailNavigationModel(
+      id: "0",
+      icon: Icons.announcement_outlined,
+      iconTitle: 'Announcements',
+      routeName: AnnouncementsScreen.routeName,
+    ),
     EventDetailNavigationModel(
       id: "1",
       icon: Icons.info_outline,

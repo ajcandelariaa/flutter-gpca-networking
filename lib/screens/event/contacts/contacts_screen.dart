@@ -3,6 +3,7 @@ import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
 import 'package:gpca_networking/widgets/notifications/app_bar_notification_badge.dart';
+import 'package:gpca_networking/widgets/search/search_bar.dart';
 import 'package:provider/provider.dart';
 
 class ContactsScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class ContactsScreen extends StatelessWidget {
     Provider.of<EventDrawerProvider>(ctx, listen: false).setActivePage(1);
     Navigator.of(ctx).pushReplacementNamed(EventDetailScreen.routeName);
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -27,6 +28,15 @@ class ContactsScreen extends StatelessWidget {
           ],
         ),
         drawer: EventDrawer(),
+        body: Container(
+          margin: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 15,
+          ),
+          child: Column(children: [
+            SearchBar(),
+          ]),
+        ),
       ),
     );
   }
