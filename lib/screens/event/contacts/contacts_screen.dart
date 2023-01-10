@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/providers/contact_provider.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
+import 'package:gpca_networking/widgets/contacts/contact_tile.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
 import 'package:gpca_networking/widgets/notifications/app_bar_notification_badge.dart';
 import 'package:gpca_networking/widgets/search/search_bar.dart';
@@ -17,6 +19,7 @@ class ContactsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final contacts = Provider.of<ContactProvider>(context).contacts;
     return WillPopScope(
       onWillPop: () => _onBackButtonPress(context),
       child: Scaffold(
@@ -33,9 +36,29 @@ class ContactsScreen extends StatelessWidget {
             horizontal: 20,
             vertical: 15,
           ),
-          child: Column(children: [
-            SearchBar(),
-          ]),
+          child: Column(
+            children: [
+              SearchBar(),
+              const SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: contacts.length,
+                  itemBuilder: (context, index) {
+                    return ContactTile(
+                      id: contacts[index].id,
+                      eventId: contacts[index].eventId,
+                      contactType: contacts[index].contactType,
+                      name: contacts[index].name,
+                      description: contacts[index].description,
+                      photo: contacts[index].photo,
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

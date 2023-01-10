@@ -8,6 +8,8 @@ class ContactModel {
   final String mobileNumber;
   final String landlineNumber;
   final String photo;
+  final String dateAdded;
+  final String timeAdded;
 
   ContactModel({
     required this.id,
@@ -19,5 +21,7 @@ class ContactModel {
     required this.mobileNumber,
     required this.landlineNumber,
     required this.photo,
+    required this.dateAdded,
+    required this.timeAdded,
   });
 }

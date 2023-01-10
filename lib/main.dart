@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/app_drawer_provider.dart';
+import 'package:gpca_networking/providers/contact_provider.dart';
 import 'package:gpca_networking/providers/event_detail_navigation_provider.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/event_provider.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ProgramProvider()),
         ChangeNotifierProvider(create: (_) => ProgramSessionDateProvider()),
         ChangeNotifierProvider(create: (_) => ProgramSessionProvider()),
+        ChangeNotifierProvider(create: (_) => ContactProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(
