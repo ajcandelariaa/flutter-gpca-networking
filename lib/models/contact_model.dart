@@ -1,9 +1,11 @@
 class ContactModel {
   final String id;
+  final String baseId;
   final String eventId;
+  final bool isActive;
   final String contactType;
   final String name;
-  final String description;
+  final String note;
   final String emailAddress;
   final String mobileNumber;
   final String landlineNumber;
@@ -13,10 +15,12 @@ class ContactModel {
 
   ContactModel({
     required this.id,
+    required this.baseId,
     required this.eventId,
+    required this.isActive,
     required this.contactType,
     required this.name,
-    required this.description,
+    required this.note,
     required this.emailAddress,
     required this.mobileNumber,
     required this.landlineNumber,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/contact_provider.dart';
+import 'package:gpca_networking/widgets/contacts/contact_detail_body.dart';
+import 'package:gpca_networking/widgets/contacts/contact_detail_footer.dart';
+import 'package:gpca_networking/widgets/contacts/contact_detail_header.dart';
 import 'package:provider/provider.dart';
 
 class ContactDetailScreen extends StatelessWidget {
@@ -17,15 +20,33 @@ class ContactDetailScreen extends StatelessWidget {
         title: Text("Contact details"),
         centerTitle: true,
       ),
-      body: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 20,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ContactDetailHeader(
+              id: contact.id,
+              name: contact.name,
+              contactType: contact.contactType,
+              photo: contact.photo,
+            ),
+            SizedBox(height: 5,),
+            ContactDetailBody(
+              id: contact.id,
+              emailAddress: contact.emailAddress,
+              mobileNumber: contact.mobileNumber,
+              landlineNumber: contact.landlineNumber,
+              dateAdded: contact.dateAdded,
+              timeAdded: contact.timeAdded,
+              note: contact.note,
+            ),
+            SizedBox(height: 5,),
+            ContactDetailFooter(
+              baseId: contact.baseId,
+              eventId: contact.eventId,
+              contactType: contact.contactType,
+              isActive: contact.isActive,
+            ),
+          ],
         ),
       ),
     );

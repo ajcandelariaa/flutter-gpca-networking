@@ -51,7 +51,7 @@ class ContactsScreen extends StatelessWidget {
                       eventId: contacts[index].eventId,
                       contactType: contacts[index].contactType,
                       name: contacts[index].name,
-                      description: contacts[index].description,
+                      note: contacts[index].note,
                       photo: contacts[index].photo,
                     );
                   },

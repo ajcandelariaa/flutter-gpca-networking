@@ -6,7 +6,7 @@ class ContactTile extends StatelessWidget {
   final String eventId;
   final String contactType;
   final String name;
-  final String description;
+  final String note;
   final String photo;
 
   ContactTile({
@@ -14,7 +14,7 @@ class ContactTile extends StatelessWidget {
     required this.eventId,
     required this.contactType,
     required this.name,
-    required this.description,
+    required this.note,
     required this.photo,
   });
 
