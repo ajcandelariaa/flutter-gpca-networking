@@ -14,6 +14,7 @@ import 'package:gpca_networking/providers/social_feeds_provider.dart';
 import 'package:gpca_networking/providers/speaker_provider.dart';
 import 'package:gpca_networking/providers/sponsor_provider.dart';
 import 'package:gpca_networking/providers/theme_provider.dart';
+import 'package:gpca_networking/providers/user_profile_provider.dart';
 import 'package:gpca_networking/routes/route.dart';
 import 'package:provider/provider.dart';
 
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ProgramSessionDateProvider()),
         ChangeNotifierProvider(create: (_) => ProgramSessionProvider()),
         ChangeNotifierProvider(create: (_) => ContactProvider()),
+        ChangeNotifierProvider(create: (_) => UserProfileProvider()),
       ],  
       builder: (context, child) {
         return MaterialApp(
