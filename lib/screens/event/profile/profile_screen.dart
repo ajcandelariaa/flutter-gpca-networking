@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpca_networking/providers/event_drawer_provider.dart';
 import 'package:gpca_networking/providers/user_profile_provider.dart';
 import 'package:gpca_networking/screens/event/event_detail_screen.dart';
+import 'package:gpca_networking/screens/event/profile/edit_profile_screen.dart';
 import 'package:gpca_networking/widgets/drawers/event/event_drawer.dart';
 import 'package:gpca_networking/widgets/notifications/app_bar_notification_badge.dart';
 import 'package:gpca_networking/widgets/profile/profile_body_five.dart';
@@ -23,7 +24,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProfileProvider>(context).getProfile(id: "1", eventId: "1");
+    final user = Provider.of<UserProfileProvider>(context)
+        .getProfile(id: "1", eventId: "1");
     return WillPopScope(
       onWillPop: () => _onBackButtonPress(context),
       child: Scaffold(
@@ -45,34 +47,60 @@ class ProfileScreen extends StatelessWidget {
                 lastName: user.lastName,
                 photo: user.photo,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               ProfileBodyOne(
                 emailAddress: user.emailAddress,
                 mobileNumber: user.mobileNumber,
                 landlineNumber: user.landlineNumber,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               ProfileBodyTwo(
                 companyName: user.companyName,
                 jobTitle: user.jobTitle,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               ProfileBodyThree(
                 username: user.username,
                 password: user.password,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               ProfileBodyFour(
                 badgeNumber: user.badgeNumber,
                 vistorType: user.vistorType,
                 country: user.country,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               ProfileBodyFive(
                 dateJoined: user.dateJoined,
                 timeJoined: user.timeJoined,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.edit_note),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(EditProfileScreen.routeName);
+                },
+                label: const Text("Edit profile", style: TextStyle(fontSize: 20),),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  backgroundColor: Theme.of(context).primaryColor,
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
