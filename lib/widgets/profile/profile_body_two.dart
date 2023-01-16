@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ProfileBodyTwo extends StatelessWidget {
-  final String companyName, jobTitle;
+  final String companyName, jobTitle, country;
 
   ProfileBodyTwo({
     required this.companyName,
     required this.jobTitle,
+    required this.country,
   });
 
   @override
@@ -70,6 +71,34 @@ class ProfileBodyTwo extends StatelessWidget {
                       ),
                       Text(
                         jobTitle,
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.map_outlined,
+                    size: 30,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Country:",
+                        style: TextStyle(color: Colors.grey.shade800),
+                      ),
+                      Text(
+                        country,
                         style: TextStyle(fontSize: 16),
                       ),
                     ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gpca_networking/widgets/forms/edit_profile_form.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class EditProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               
+              EditProfileForm(),
             ],
           ),
         ),

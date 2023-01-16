@@ -15,7 +15,6 @@ class UserProfileProvider with ChangeNotifier {
     companyName: "GPCA",
     jobTitle: "IT Intern",
     username: "ajcandelariaa",
-    password: "********",
     badgeNumber: "BADGE123",
     vistorType: "Pre-reg",
     country: "UAE",

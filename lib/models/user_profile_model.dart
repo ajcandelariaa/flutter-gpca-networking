@@ -4,7 +4,7 @@ class UserProfileModel {
   final String salutation, firstName, middleName, lastName;
   final String emailAddress, mobileNumber, landlineNumber;
   final String companyName, jobTitle;
-  final String username, password;
+  final String username;
   final String badgeNumber, vistorType, country;
   final String dateJoined, timeJoined;
   final String photo;
@@ -22,7 +22,6 @@ class UserProfileModel {
     required this.companyName,
     required this.jobTitle,
     required this.username,
-    required this.password,
     required this.badgeNumber,
     required this.vistorType,
     required this.country,

@@ -11,8 +11,10 @@ import 'package:gpca_networking/screens/event/favorite/favorite_sponsors_screen.
 import 'package:gpca_networking/screens/event/feedback/feedback_screen.dart';
 import 'package:gpca_networking/screens/event/media_partner/media_partner_detail_screen.dart';
 import 'package:gpca_networking/screens/event/meeting_room_partner/meeting_room_partner_detail_screen.dart';
+import 'package:gpca_networking/screens/event/profile/change_password_feedback_screen.dart';
 import 'package:gpca_networking/screens/event/profile/edit_profile_screen.dart';
 import 'package:gpca_networking/screens/event/profile/profile_full_image_screen.dart';
+import 'package:gpca_networking/screens/event/profile/change_password_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_detail_screen.dart';
 import 'package:gpca_networking/screens/event/program/session_screen.dart';
 import 'package:gpca_networking/screens/event/speaker/speaker_detail_screen.dart';
@@ -63,6 +65,8 @@ getRoutes() {
     EventDetailScreen.routeName: (context) => EventDetailScreen(),
     ProfileScreen.routeName: (context) => ProfileScreen(),
     EditProfileScreen.routeName: (context) => EditProfileScreen(),
+    ChangePasswordScreen.routeName: (context) => ChangePasswordScreen(),
+    ChangePasswordFeedbackScreen.routeName: (context) => ChangePasswordFeedbackScreen(),
     ContactsScreen.routeName: (context) => ContactsScreen(),
     ContactDetailScreen.routeName: (context) => ContactDetailScreen(),
     FeedbackScreen.routeName: (context) => FeedbackScreen(),

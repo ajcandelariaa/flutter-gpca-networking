@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProfileBodyOne extends StatelessWidget {
-  final String emailAddress, mobileNumber, landlineNumber;
+  final String username, emailAddress, mobileNumber, landlineNumber;
 
   ProfileBodyOne({
+    required this.username,
     required this.emailAddress,
     required this.mobileNumber,
     required this.landlineNumber,
@@ -24,6 +25,34 @@ class ProfileBodyOne extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.account_circle_outlined,
+                    size: 30,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Username:",
+                        style: TextStyle(color: Colors.grey.shade800),
+                      ),
+                      Text(
+                        username,
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
               Row(
                 children: [
                   Icon(
