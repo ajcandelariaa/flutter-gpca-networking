@@ -20,16 +20,28 @@ class EditProfileForm extends StatelessWidget {
       child: Form(
         child: Column(
           children: [
+            DropdownButton(
+              items: [ 
+                DropdownMenuItem(
+                  child: Text("Test"),
+                ),
+              ],
+              onChanged: (value) => "Test",
+            ),
             TextFormField(
               decoration: const InputDecoration(labelText: "First name"),
               initialValue: userData.firstName,
             ),
-            TextFormField(),
-            TextFormField(),
             TextFormField(
-              decoration: const InputDecoration(labelText: "Last Name"),
+              decoration: const InputDecoration(labelText: "Middle name"),
+              initialValue: userData.middleName,
+            ),
+            TextFormField(
+              decoration: const InputDecoration(labelText: "Last name"),
               initialValue: userData.lastName,
             ),
+            TextFormField(),
+            TextFormField(),
           ],
         ),
       ),
